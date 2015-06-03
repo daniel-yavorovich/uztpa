@@ -1,9 +1,9 @@
 $(function(){
 	$('#header-config').hover(function(){
-		$(this).find('ul').slideDown();
+		$(this).find('ul').fadeIn();
 	},
 	function(){
-		$(this).find('ul').slideUp();
+		$(this).find('ul').fadeOut();
 	});
 
 	$( ".toup" ).click(function(){
