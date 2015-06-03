@@ -141,7 +141,7 @@ header .navbar-toggle .icon-bar {
 
 /* line 126, sass/style.scss */
 .billboard, .quatest {
-  background: url(img/quatestbg.jpg) no-repeat bottom right;
+  background: #fff no-repeat bottom right;
   background-size: cover;
 }
 
