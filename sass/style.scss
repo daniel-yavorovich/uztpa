@@ -22,10 +22,14 @@ a:focus{
 header{
 	padding-top: 15px;
 	padding-bottom: 15px;
-	overflow: hidden;
+	position: relative;
+	.header-logo{
+		float: left;
+	}
 	h2{
 		display: inline-block;
-		margin: 0;
+		margin: 13px 0 0;
+		float: left;
 		margin-left: 30px;
 		text-transform: uppercase;
 		color: #6c6d6f;
@@ -53,6 +57,24 @@ header{
 			}
 		}
 	}
+	.navbar-toggle{
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin-top: 0;
+		margin-right: 0;
+		padding-right: 0;
+		.icon-bar{
+			height: 6px;
+			width: 34px;
+			margin-bottom: 4px;
+			background: #1b3766;
+			border-radius: 6px;
+		}
+	}
+}
+.clear{
+	clear: both;
 }
 .billboard, .quatest{
 	background: url(img/quatestbg.jpg) no-repeat bottom right;
@@ -60,6 +82,13 @@ header{
 }
 .billboard{
 	position: relative;
+	.navbar{
+		border: 0;
+		margin-bottom: 0;
+		.navbar-collapse.in{
+			overflow-y:visible;
+		}
+	}
 	.container{
 		min-height: 290px;
 	}
@@ -82,9 +111,13 @@ header{
 				line-height: 73px;
 				color: #fff;
 				border-top: 2px solid transparent;
+				.car{
+					margin-left: 20px;
+					display: inline-block;
+				}
 				
 			}
-			&.active a{
+			&.active>a{
 				background: #ffffff;
 				color: #000;
 				border-color: #a9acbb;
@@ -95,12 +128,89 @@ header{
 				}
 			}
 		}
+		.dropdown-menu{
+			padding-top: 15px;
+			padding-bottom: 15px;
+			background: rgba(0,0,0,.5);
+			border: 0;
+			border-radius: 0;
+			box-shadow: none;
+			>li{
+				>a{
+					text-transform: none;
+					line-height: 25px;
+					color: #fff;
+					background: transparent;
+					&:hover{
+						background: rgba(0,0,0,.6);
+					}
+				}
+			}
+			
+		}
 		a{
 			@include box-sizing(border-box);
-			@include transition(all 300ms);
+			@include transition(background 300ms, color 300ms);
 			&:hover{
 				background: rgba(0,0,0,.6);
 			}
 		}
 	}
+}
+@media (max-width: 991px){
+	.nav a{
+		font-size: 12px;
+	}
+}
+@media (max-width: 767px){
+	header{
+		.header-logo{
+			float: none;
+		}
+		h2{
+			display: block;
+			float: none;
+			margin-left: 0;
+			margin-top: 5px;
+		}
+		.header-config{
+			display: none;
+			// float: none;
+		}
+		.col-md-12{
+			padding: 0;
+		}
+	}
+	.billboard{
+		.container{
+			padding: 0;
+		}
+		.navbar{
+			.nav{
+				height: auto !important;
+				margin: 0 !important;
+				a{
+					line-height: 33px !important;
+					.car{
+						width: 30px;
+						height: 30px;
+					}
+				}
+				.dropdown-menu{
+					position: static;
+					width: 100%;
+					padding-top: 0;
+					padding-bottom: 0;
+					a{
+						line-height: 23px !important;
+					}
+				}
+			}
+			.navbar-collapse{
+				border: 0 !important;
+				padding: 0; 
+			}
+		}
+	}
+	
 }

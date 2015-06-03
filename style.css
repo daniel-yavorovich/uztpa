@@ -21,12 +21,17 @@ a:focus {
 header {
   padding-top: 15px;
   padding-bottom: 15px;
-  overflow: hidden;
+  position: relative;
 }
 /* line 26, sass/style.scss */
+header .header-logo {
+  float: left;
+}
+/* line 29, sass/style.scss */
 header h2 {
   display: inline-block;
-  margin: 0;
+  margin: 13px 0 0;
+  float: left;
   margin-left: 30px;
   text-transform: uppercase;
   color: #6c6d6f;
@@ -36,7 +41,7 @@ header h2 {
   top: 2px;
   font-weight: 300;
 }
-/* line 38, sass/style.scss */
+/* line 42, sass/style.scss */
 header .header-config {
   float: right;
   text-transform: uppercase;
@@ -44,52 +49,83 @@ header .header-config {
   position: relative;
   margin-top: 13px;
 }
-/* line 44, sass/style.scss */
+/* line 48, sass/style.scss */
 header .header-config a {
   color: inherit;
 }
-/* line 47, sass/style.scss */
+/* line 51, sass/style.scss */
 header .header-config ul {
   display: none;
   list-style: none;
   padding-left: 0;
 }
-/* line 51, sass/style.scss */
+/* line 55, sass/style.scss */
 header .header-config ul li {
   text-transform: uppercase;
 }
+/* line 60, sass/style.scss */
+header .navbar-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+/* line 67, sass/style.scss */
+header .navbar-toggle .icon-bar {
+  height: 6px;
+  width: 34px;
+  margin-bottom: 4px;
+  background: #1b3766;
+  border-radius: 6px;
+}
 
-/* line 57, sass/style.scss */
+/* line 76, sass/style.scss */
+.clear {
+  clear: both;
+}
+
+/* line 79, sass/style.scss */
 .billboard, .quatest {
   background: url(img/quatestbg.jpg) no-repeat bottom right;
   background-size: cover;
 }
 
-/* line 61, sass/style.scss */
+/* line 83, sass/style.scss */
 .billboard {
   position: relative;
 }
-/* line 63, sass/style.scss */
+/* line 85, sass/style.scss */
+.billboard .navbar {
+  border: 0;
+  margin-bottom: 0;
+}
+/* line 88, sass/style.scss */
+.billboard .navbar .navbar-collapse.in {
+  overflow-y: visible;
+}
+/* line 92, sass/style.scss */
 .billboard .container {
   min-height: 290px;
 }
-/* line 66, sass/style.scss */
+/* line 95, sass/style.scss */
 .billboard .nav .open > a, .billboard .nav .open > a:hover, .billboard .nav .open > a:focus, .billboard .nav .active.open > a {
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
   border-color: transparent;
 }
-/* line 71, sass/style.scss */
+/* line 100, sass/style.scss */
 .billboard .nav > li > a:focus {
   background: transparent;
 }
-/* line 74, sass/style.scss */
+/* line 103, sass/style.scss */
 .billboard .nav {
   height: 75px;
   text-transform: uppercase;
   background: rgba(0, 0, 0, 0.3);
 }
-/* line 79, sass/style.scss */
+/* line 108, sass/style.scss */
 .billboard .nav > li > a {
   padding-top: 0;
   padding-bottom: 0;
@@ -97,29 +133,117 @@ header .header-config ul li {
   color: #fff;
   border-top: 2px solid transparent;
 }
-/* line 87, sass/style.scss */
-.billboard .nav > li.active a {
+/* line 114, sass/style.scss */
+.billboard .nav > li > a .car {
+  margin-left: 20px;
+  display: inline-block;
+}
+/* line 120, sass/style.scss */
+.billboard .nav > li.active > a {
   background: #ffffff;
   color: #000;
   border-color: #a9acbb;
 }
-/* line 91, sass/style.scss */
-.billboard .nav > li.active a:hover {
+/* line 124, sass/style.scss */
+.billboard .nav > li.active > a:hover {
   border-color: transparent;
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
 }
-/* line 98, sass/style.scss */
+/* line 131, sass/style.scss */
+.billboard .nav .dropdown-menu {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+/* line 139, sass/style.scss */
+.billboard .nav .dropdown-menu > li > a {
+  text-transform: none;
+  line-height: 25px;
+  color: #fff;
+  background: transparent;
+}
+/* line 144, sass/style.scss */
+.billboard .nav .dropdown-menu > li > a:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+/* line 151, sass/style.scss */
 .billboard .nav a {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-transition: all 300ms;
-  -o-transition: all 300ms;
-  -webkit-transition: all 300ms;
-  transition: all 300ms;
+  -moz-transition: background 300ms, color 300ms;
+  -o-transition: background 300ms, color 300ms;
+  -webkit-transition: background 300ms, color 300ms;
+  transition: background 300ms, color 300ms;
 }
-/* line 101, sass/style.scss */
+/* line 154, sass/style.scss */
 .billboard .nav a:hover {
   background: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 991px) {
+  /* line 161, sass/style.scss */
+  .nav a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 767px) {
+  /* line 167, sass/style.scss */
+  header .header-logo {
+    float: none;
+  }
+  /* line 170, sass/style.scss */
+  header h2 {
+    display: block;
+    float: none;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  /* line 176, sass/style.scss */
+  header .header-config {
+    display: none;
+  }
+  /* line 180, sass/style.scss */
+  header .col-md-12 {
+    padding: 0;
+  }
+
+  /* line 185, sass/style.scss */
+  .billboard .container {
+    padding: 0;
+  }
+  /* line 189, sass/style.scss */
+  .billboard .navbar .nav {
+    height: auto !important;
+    margin: 0 !important;
+  }
+  /* line 192, sass/style.scss */
+  .billboard .navbar .nav a {
+    line-height: 33px !important;
+  }
+  /* line 194, sass/style.scss */
+  .billboard .navbar .nav a .car {
+    width: 30px;
+    height: 30px;
+  }
+  /* line 199, sass/style.scss */
+  .billboard .navbar .nav .dropdown-menu {
+    position: static;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* line 204, sass/style.scss */
+  .billboard .navbar .nav .dropdown-menu a {
+    line-height: 23px !important;
+  }
+  /* line 209, sass/style.scss */
+  .billboard .navbar .navbar-collapse {
+    border: 0 !important;
+    padding: 0;
+  }
 }
