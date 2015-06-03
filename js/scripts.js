@@ -5,16 +5,16 @@ $(function(){
 	function(){
 		$(this).find('ul').slideUp();
 	});
-	// $(window).resize(function(){
-	// 	// setTimeout(function(){
-	// 		$('#header-config').css({'float':'none','float':'right'});
-	// 	// },3000);
-		
-	// });
+
+	$( ".toup" ).click(function(){
+		$('html, body').animate({scrollTop: 0}, 1000);
+	})
 
 	$('.car').click(function(e){
-		e.stopPropagation();
-		$('.dropdown-menu').slideUp();
-		$(this).parent().siblings('.dropdown-menu').slideToggle();
+		var menu = $(this).parent().siblings('.dropdown-menu');
+		$('.dropdown-menu').not(menu).parents('.dropdown').removeClass('open');
+		menu.parents('.dropdown').toggleClass('open')
+		// menu.slideToggle();
+		return false;
 	})
 });
