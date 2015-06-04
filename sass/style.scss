@@ -6,6 +6,7 @@ $contentcolor: #57565b;
 $verdana: 'Verdana', sans-serif;
 $arial: 'Arial', sans-serif;
 $exo2: 'Exo 2', sans-serif;
+$open: 'Open Sans', sans-serif;
 
 html, body{
 	color: $textcolor;
@@ -20,6 +21,9 @@ a:focus{
 	outline: none;
 	color: inherit;
 	text-decoration: none;
+}
+button:focus{
+	outline: none;
 }
 .container, header, footer,.billboard{
 	min-width: 320px;
@@ -262,6 +266,93 @@ header{
 			background: rgba(255,255,255,.45);
 		}
 	}
+	&.nonormalh{
+		h1{
+			max-width: 100%;
+			text-align: center;
+			font-family: $open;
+			text-transform: uppercase;
+			font-size: 36px;
+			font-weight: 400;
+			text-shadow: 0 3px 0 rgba(0, 1, 1, 0.42);
+			border: 0;
+			margin-bottom: 5px;
+			&:after{
+				display: none;
+			}
+		}
+	}
+	.playarea{
+		max-width: 500px;
+		position: relative;
+		margin: 0 auto 67px;
+		height: 405px;
+		background: url(img/play_bg.png) center;
+		.play-btn{
+			position: absolute;
+			width: 41px;
+			height: 50px;
+			border: 0;
+			background: url(img/play_btn.png) no-repeat left top;
+			left: 50%;
+			top: 50%;
+			margin-left: -17px;
+			margin-top: -12px;
+			&:hover{
+				background-position: left -55px;
+				// @include transform(rotate(360deg));
+				// @include transition(transform 600ms)
+			}
+		}
+		.main-l{
+			position: absolute;
+			width: 313px;
+			height: 71px;
+			text-align: center;
+			padding-top: 8px;
+			@include transition(transform 300ms);
+			background: url(img/mainl_sprite.png) no-repeat;
+			h4{
+				color: #1e86bb;
+				text-transform: uppercase;
+				font-size: 22px;
+				margin-bottom: 0;
+			}
+			span{
+				color: #33311f;
+				font-family: "Trebuchet MS";
+			}
+			&:hover{
+				text-decoration: none;
+			}
+		}
+		.aquar-l{
+			padding-left: 70px;
+			text-align: left;
+			background-position: left top;
+			top: 80px;
+			left: -205px;
+		}
+		.neon-l{
+			padding-right: 55px;
+			text-align: right;
+			background-position: right -74px;
+			top: 80px;
+			right: -205px;
+			h4{
+				color: #ff6000;
+			}
+		}
+		.aquam-l{
+			padding-top: 83px;
+			background-position: left -146px;
+			height: 145px;
+			width: 225px;
+			bottom: -31px;
+			left:50%;
+			margin-left: -112px;
+		}
+	}
 }
 .main-content{
 	padding-top: 25px;
@@ -473,6 +564,18 @@ footer{
 			display: none;
 		}
 	}
+	.billboard{
+		.playarea{
+			.aquar-l{
+				top: 8px;
+				left: -75px;
+			}
+			.neon-l{
+				top: 8px;
+				right: -75px;
+			}
+		}
+	}
 	
 	
 }
@@ -536,6 +639,24 @@ footer{
 }
 
 @media (max-width: 700px){
+	.billboard{
+		 .playarea{
+		 	background: none;
+		 	height: 300px;
+		 	.play-btn{
+		 		display: none;
+		 	}
+		 	.aquar-l{
+		 		left: 50%;
+		 		margin-left: -156px;
+		 	}
+		 	.neon-l{
+		 		top: 92px;
+		 		right: 50%;
+		 		margin-right: -156px;
+		 	}
+		 }
+	}
 	footer{
 		padding-top: 30px;
 		padding-bottom: 30px;
@@ -563,4 +684,12 @@ footer{
 		float: none;
 		width: 100%;
 	}
+	.billboard{
+		&.nonormalh{
+			h1{
+				font-size: 33px;
+			}
+		}
+	}
+	
 }
