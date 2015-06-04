@@ -1,4 +1,6 @@
 @import "compass/css3";
+@import "compass/utilities/sprites";
+@import "sprite/*.png";
 $textcolor: #000;
 $bgcolor: #fff;
 $contentcolor: #57565b;
@@ -10,8 +12,11 @@ $exo2: 'Exo 2', sans-serif;
 $open: 'Open Sans', sans-serif;
 
 html, body{
-	color: $textcolor;
+	color: $textcolor; 
 	background-color: $bgcolor;
+	height: 100%; 
+}
+.wrapper{
 	min-height: 100%;
 }
 h1,h3,h4,h5{
@@ -144,6 +149,7 @@ header{
 	background-size: cover;
 }
 .billboard{
+	min-height: 290px;
 	position: relative;
 	.navbar{
 		border: 0;
@@ -205,6 +211,7 @@ header{
 			}
 		}
 		.dropdown-menu{
+			min-width: 100%;
 			padding-top: 15px;
 			padding-bottom: 15px;
 			background: rgba(27,55,102,.90);
@@ -243,10 +250,18 @@ header{
 			padding-left: 0;
 			color: #fff;
 			li{
-				padding-right: 35px;
-				background: url(../img/bread_arrow.png) no-repeat right center;
 				margin-right: 13px;
 				display: inline-block;
+				&:after{
+					content: '';
+					display: inline-block;
+					width: 22px;
+					margin-left: 10px;
+					height: 5px;
+					position: relative;
+					top: -1px;
+					@include sprite-sprite(bread_arrow);
+				}
 				a{
 					color: inherit;
 					text-decoration: underline;
@@ -255,7 +270,9 @@ header{
 					}
 				}
 				&:last-child{
-					background: none;
+					&:after{
+						display: none;
+					}
 				}
 			}
 		}
@@ -371,15 +388,6 @@ header{
 	color: $contentcolor;
 	font-size: 14px;
 	font-family: $verdana;
-	blockquote{
-		border-color: #000964;
-		background: #ecf0f1;
-		font-family: $arial;
-		color: #57565b;
-		font-size: 18px;
-		margin-bottom: 5px;
-		margin-top: 20px;
-	}
 	h3{
 		font-size: 30px;
 		margin-top: 0;
@@ -387,7 +395,56 @@ header{
 	h4{
 		font-size: 18px;
 	}
+	h5{
+		font-family: $verdana;
+		font-weight: 700;
+		line-height: 20px;
+		margin-bottom: 25px;
+		&+ul{
+			li{
+				padding-left: 40px !important;
+				&:before{
+					left: 7px !important;
+				}
+			}
+		}
+	}
 	.content-block{
+		&:last-child{
+			padding-bottom: 10px;
+		}
+		p{
+			&+blockquote{
+				margin-top: 60px;
+				margin-bottom: 45px;
+			}
+		}
+		blockquote{
+			border-color: #000964;
+			background: #ecf0f1;
+			font-family: $arial;
+			color: #57565b;
+			font-size: 18px;
+			margin-bottom: 10px;
+			margin-top: 20px;
+			line-height: 1.42;
+			padding:20px 30px;
+			&+h3{
+				margin-top: 20px;
+			}
+			&:first-child{
+				margin-top: 0;
+			}
+			p{
+				line-height: 1.42;
+				strong{
+					color: #57565b;
+				}
+			}
+			p:last-child, ul:last-child, ol:last-child{
+				margin-bottom: 0;
+			}
+		}
 		&:last-child{
 			.cont-wrap{
 				border: 0;
@@ -397,6 +454,14 @@ header{
 			padding-top: 20px;
 			padding-bottom: 20px;
 			border-bottom: 1px solid #bdc3c7;
+			img{
+				width: 100%;
+				display: block;
+				margin: 10px auto;
+			}
+			ul{
+				margin-top: 10px;
+			}
 		}
 		ul{
 			list-style: none;
@@ -417,17 +482,83 @@ header{
 					background: #a9acbb;
 				}
 			}
-
+			&+h5{
+				margin-top: 35px;
+			}
 		}
 		p{
 			line-height: 20px;
 			margin-bottom: 15px;
+			strong{
+				color: $textcolor;
+			}
+		}
+		a{
+			text-decoration: underline;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+		.content-block-parts{
+			margin-bottom: 28px;
+			&:first-child{
+				padding-top: 20px;
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		.structure{
+			h5{
+				margin-bottom: 0;
+				font-weight: normal;
+			}
+			h4{
+				margin-top: 0;
+				&+h5{
+					margin-top: 40px;
+				}
+			}
 		}
 	}
 	.sidebar{
-		h4{
+		&>h4{
 			margin-top: 0;
-			margin-bottom: 0;
+			margin-bottom: 20px;
+			padding-top: 20px;
+			border-top: 1px solid #d4d4d4;
+			&:first-child{
+				border: 0;
+				padding-top: 0;
+			}
+		}
+		.serts{
+			margin-left: -7.5px;
+			margin-right: -7.5px;
+			a{
+				padding-left: 7px;
+				padding-right: 7px;
+				margin-bottom: 5px;
+				&:last-child{
+					margin-bottom: 0;
+					display: block;
+					text-align: left;
+				}
+			}
+		}
+		a{
+			display: inline-block;
+			text-decoration: underline;
+			&:hover{
+				text-decoration: none;
+			}
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+		&>div{
+			margin-bottom: 20px;
 		}
 		.banners{
 			margin-bottom: 30px;
@@ -435,7 +566,15 @@ header{
 		.banner-block{
 			display: block;
 			position: relative;
-			margin-top: 20px;
+			margin-bottom: 20px;
+			&.blue{
+				h4{
+					color: #1b3766;
+					&:after{
+						background-position: right top;
+					}
+				}
+			}
 			.banner-wrap{
 				border-radius: 4px;
 				overflow: hidden;
@@ -445,17 +584,30 @@ header{
 				height: auto;
 			}
 			h4{
+				margin-top: 0;
 				position: absolute;
 				color: #fff;
 				top: 18px;
 				left: 32px;
 				padding-right: 26px;
-				background: url(../img/banner_link.png) no-repeat right bottom;
+				&:after{
+					bottom: 1px;
+					position: absolute;
+					content: '';
+					background: url(../img/banner_link.png) no-repeat right bottom;
+					height: 11px;
+					width: 24px;
+				}
 			}
 		}
 	}
 }
+.for-footer{
+	height: 221px;
+}
 footer{
+	margin-top: -221px;
+	min-height: 220px;
 	padding-top: 20px;
 	padding-bottom: 90px;
 	background: #1a1b1c;
@@ -593,6 +745,9 @@ footer{
 			}
 		}
 	}
+	.main-content .content-block .cont-wrap img{
+		max-width: 244px;
+	}
 	
 	
 }
@@ -616,6 +771,7 @@ footer{
 		}
 	}
 	.billboard{
+		min-height: 1px;
 		.navbar{
 			margin-bottom: 0;
 			min-height: 1px;
@@ -644,7 +800,7 @@ footer{
 			}
 			.navbar-collapse{
 				border: 0 !important;
-				padding: 0; 
+				padding: 0;
 			}
 		}
 		.breadcrumbs{
@@ -654,6 +810,16 @@ footer{
 	.banner-block{
 		float: left;
 		width: 50%;
+
+	}
+	.serts{
+		text-align: center;
+		a{
+			display: inline-block;
+			max-width: 175px;
+			width: auto;
+			float: none;
+		}
 	}
 	
 }
@@ -703,6 +869,9 @@ footer{
 	.banner-block{
 		float: none;
 		width: 100%;
+		max-width: 212.5px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.billboard{
 		&.nonormalh{

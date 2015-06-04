@@ -21,18 +21,28 @@ $(function(){
 	$('div[data-bg]').each(function(){
 		var src = 'url('+$(this).attr('data-bg')+')';
 		$(this).css('background-image', src);
+		if ($(this).attr('data-pos')) {
+			$(this).css('background-position', $(this).attr('data-pos')+' bottom');
+		};
 	});
 
 	// fancybox видео
-	$(".fancybox_video").fancybox({
-		maxWidth	: 800,
-		maxHeight	: 600,
-		fitToView	: false,
-		width		: '70%',
-		height		: '70%',
-		autoSize	: false,
-		closeClick	: false,
-		openEffect	: 'none',
-		closeEffect	: 'none'
-	});
+	if($(".fancybox_video").length>0){			
+		$(".fancybox_video").fancybox({
+			maxWidth	: 800,
+			maxHeight	: 600,
+			fitToView	: false,
+			width		: '70%',
+			height		: '70%',
+			autoSize	: false,
+			closeClick	: false,
+			openEffect	: 'none',
+			closeEffect	: 'none'
+		});
+	}
+
+	if ($(".fancybox").length>0) {
+		$(".fancybox").fancybox();
+	};
+
 });
