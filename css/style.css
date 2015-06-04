@@ -1,0 +1,817 @@
+/* line 12, ../sass/style.scss */
+html, body {
+  color: #000;
+  background-color: #fff;
+  min-height: 100%;
+}
+
+/* line 17, ../sass/style.scss */
+h1, h3, h4, h5 {
+  color: #000;
+  font-family: "Exo 2", sans-serif;
+}
+
+/* line 21, ../sass/style.scss */
+a:focus {
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 26, ../sass/style.scss */
+button:focus {
+  outline: none;
+}
+
+/* line 29, ../sass/style.scss */
+.neoncolor, .neoncolor a {
+  color: #ff6000 !important;
+}
+
+/* line 32, ../sass/style.scss */
+.container, header, footer, .billboard {
+  min-width: 320px;
+}
+
+/* line 35, ../sass/style.scss */
+header {
+  position: relative;
+  z-index: 100;
+}
+/* line 39, ../sass/style.scss */
+header .header-logo {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  float: left;
+}
+/* line 44, ../sass/style.scss */
+header h2 {
+  display: inline-block;
+  margin: 25px 0 0;
+  float: left;
+  margin-left: 30px;
+  text-transform: uppercase;
+  color: #6c6d6f;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  top: 2px;
+  font-weight: 300;
+}
+/* line 57, ../sass/style.scss */
+header .header-config {
+  float: right;
+  text-transform: uppercase;
+  color: #1b3766;
+  position: relative;
+  font-family: "Trebuchet MS";
+  font-weight: 400;
+  width: 183px;
+  text-align: center;
+  -moz-transition: all 400ms;
+  -o-transition: all 400ms;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+/* line 67, ../sass/style.scss */
+header .header-config .car {
+  margin-left: 10px;
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  background: url(../img/sprite_arrow.png) no-repeat;
+  background-position: left -10px;
+}
+/* line 75, ../sass/style.scss */
+header .header-config:hover {
+  background: rgba(0, 0, 0, 0.39);
+}
+/* line 77, ../sass/style.scss */
+header .header-config:hover > a {
+  color: #fff;
+}
+/* line 80, ../sass/style.scss */
+header .header-config:hover .car {
+  background-position: left top;
+}
+/* line 84, ../sass/style.scss */
+header .header-config a {
+  color: inherit;
+  line-height: 75px;
+  display: inline-block;
+  -moz-transition: all 300ms;
+  -o-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+/* line 89, ../sass/style.scss */
+header .header-config a:hover {
+  text-decoration: none;
+}
+/* line 93, ../sass/style.scss */
+header .header-config ul {
+  text-align: left;
+  display: none;
+  list-style: none;
+  padding-left: 0;
+  position: absolute;
+  bottom: -139px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.39);
+  width: 183px;
+}
+/* line 104, ../sass/style.scss */
+header .header-config ul li {
+  text-transform: uppercase;
+}
+/* line 106, ../sass/style.scss */
+header .header-config ul li a {
+  display: block;
+  line-height: 43px;
+  padding-left: 30px;
+  color: #1e86bb;
+}
+/* line 111, ../sass/style.scss */
+header .header-config ul li a:hover {
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+/* line 120, ../sass/style.scss */
+header .col-md-12 {
+  overflow: visible;
+}
+/* line 123, ../sass/style.scss */
+header .navbar-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  margin-right: 0;
+  padding-right: 15px;
+}
+/* line 130, ../sass/style.scss */
+header .navbar-toggle .icon-bar {
+  height: 6px;
+  width: 34px;
+  margin-bottom: 4px;
+  background: #1b3766;
+  border-radius: 6px;
+}
+
+/* line 139, ../sass/style.scss */
+.clear {
+  clear: both;
+}
+
+/* line 142, ../sass/style.scss */
+.billboard, .quatest {
+  background: #fff no-repeat bottom right;
+  background-size: cover;
+}
+
+/* line 146, ../sass/style.scss */
+.billboard {
+  position: relative;
+}
+/* line 148, ../sass/style.scss */
+.billboard .navbar {
+  border: 0;
+  margin-bottom: 40px;
+}
+/* line 151, ../sass/style.scss */
+.billboard .navbar .navbar-collapse.in {
+  overflow-y: visible;
+}
+/* line 158, ../sass/style.scss */
+.billboard .nav .open > a, .billboard .nav .open > a:hover, .billboard .nav .open > a:focus, .billboard .nav .active.open > a {
+  color: #fff;
+  background: #1b3766;
+  border-color: #264d8f;
+}
+/* line 163, ../sass/style.scss */
+.billboard .nav > li > a:focus {
+  background: transparent;
+}
+/* line 166, ../sass/style.scss */
+.billboard .nav {
+  height: 75px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.39);
+  font-family: "Trebuchet MS";
+}
+/* line 171, ../sass/style.scss */
+.billboard .nav .car {
+  margin-left: 10px;
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  background: url(../img/sprite_arrow.png) no-repeat;
+}
+/* line 179, ../sass/style.scss */
+.billboard .nav > li > a {
+  padding: 0 13.5px;
+  line-height: 73px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-top: 2px solid transparent;
+}
+/* line 188, ../sass/style.scss */
+.billboard .nav > li.active .car {
+  background-position: left -20px;
+}
+/* line 191, ../sass/style.scss */
+.billboard .nav > li.active:hover .car {
+  background-position: left top;
+}
+/* line 194, ../sass/style.scss */
+.billboard .nav > li.active > a {
+  background: #ffffff;
+  color: #000;
+  border-color: #a9acbb;
+}
+/* line 198, ../sass/style.scss */
+.billboard .nav > li.active > a:hover {
+  border-color: #264d8f;
+  color: #fff;
+  background: #1b3766;
+}
+/* line 207, ../sass/style.scss */
+.billboard .nav .dropdown-menu {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: rgba(27, 55, 102, 0.9);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+/* line 215, ../sass/style.scss */
+.billboard .nav .dropdown-menu > li > a {
+  text-transform: none;
+  line-height: 25px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  background: transparent;
+}
+/* line 222, ../sass/style.scss */
+.billboard .nav .dropdown-menu > li > a:hover {
+  background: #1b3766;
+}
+/* line 229, ../sass/style.scss */
+.billboard .nav a {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: background 300ms, color 300ms;
+  -o-transition: background 300ms, color 300ms;
+  -webkit-transition: background 300ms, color 300ms;
+  transition: background 300ms, color 300ms;
+}
+/* line 232, ../sass/style.scss */
+.billboard .nav a:hover {
+  background: #1b3766;
+  border-color: #264d8f;
+}
+/* line 238, ../sass/style.scss */
+.billboard .breadcrumbs {
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+}
+/* line 241, ../sass/style.scss */
+.billboard .breadcrumbs ul {
+  list-style: none;
+  padding-left: 0;
+  color: #fff;
+}
+/* line 245, ../sass/style.scss */
+.billboard .breadcrumbs ul li {
+  padding-right: 35px;
+  background: url(../img/bread_arrow.png) no-repeat right center;
+  margin-right: 13px;
+  display: inline-block;
+}
+/* line 250, ../sass/style.scss */
+.billboard .breadcrumbs ul li a {
+  color: inherit;
+  text-decoration: underline;
+}
+/* line 253, ../sass/style.scss */
+.billboard .breadcrumbs ul li a:hover {
+  text-decoration: none;
+}
+/* line 257, ../sass/style.scss */
+.billboard .breadcrumbs ul li:last-child {
+  background: none;
+}
+/* line 263, ../sass/style.scss */
+.billboard h1 {
+  max-width: 790px;
+  padding-bottom: 15px;
+  position: relative;
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+/* line 271, ../sass/style.scss */
+.billboard h1:after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  background: rgba(255, 255, 255, 0.45);
+}
+/* line 282, ../sass/style.scss */
+.billboard.nonormalh h1 {
+  max-width: 100%;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 36px;
+  font-weight: 400;
+  text-shadow: 0 3px 0 rgba(0, 1, 1, 0.42);
+  border: 0;
+  margin-bottom: 5px;
+}
+/* line 292, ../sass/style.scss */
+.billboard.nonormalh h1:after {
+  display: none;
+}
+/* line 297, ../sass/style.scss */
+.billboard .playarea {
+  max-width: 500px;
+  position: relative;
+  margin: 0 auto 67px;
+  height: 405px;
+  background: url(../img/play_bg.png) center;
+}
+/* line 303, ../sass/style.scss */
+.billboard .playarea .play-btn {
+  position: absolute;
+  width: 41px;
+  height: 50px;
+  border: 0;
+  background: url(../img/play_btn.png) no-repeat left top;
+  left: 50%;
+  top: 50%;
+  margin-left: -17px;
+  margin-top: -12px;
+}
+/* line 313, ../sass/style.scss */
+.billboard .playarea .play-btn:hover {
+  background-position: left -55px;
+}
+/* line 319, ../sass/style.scss */
+.billboard .playarea .main-l {
+  position: absolute;
+  width: 313px;
+  height: 71px;
+  text-align: center;
+  padding-top: 8px;
+  -moz-transition: -moz-transform 300ms;
+  -o-transition: -o-transform 300ms;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  background: url(../img/mainl_sprite.png) no-repeat;
+}
+/* line 327, ../sass/style.scss */
+.billboard .playarea .main-l h4 {
+  color: #1e86bb;
+  text-transform: uppercase;
+  font-size: 22px;
+  margin-bottom: 0;
+}
+/* line 333, ../sass/style.scss */
+.billboard .playarea .main-l span {
+  color: #33311f;
+  font-family: "Trebuchet MS";
+}
+/* line 337, ../sass/style.scss */
+.billboard .playarea .main-l:hover {
+  text-decoration: none;
+}
+/* line 341, ../sass/style.scss */
+.billboard .playarea .aquar-l {
+  padding-left: 70px;
+  text-align: left;
+  background-position: left top;
+  top: 80px;
+  left: -205px;
+}
+/* line 348, ../sass/style.scss */
+.billboard .playarea .neon-l {
+  padding-right: 55px;
+  text-align: right;
+  background-position: right -74px;
+  top: 80px;
+  right: -205px;
+}
+/* line 354, ../sass/style.scss */
+.billboard .playarea .neon-l h4 {
+  color: #ff6000;
+}
+/* line 358, ../sass/style.scss */
+.billboard .playarea .aquam-l {
+  padding-top: 83px;
+  background-position: left -146px;
+  height: 145px;
+  width: 225px;
+  bottom: -31px;
+  left: 50%;
+  margin-left: -112px;
+}
+
+/* line 369, ../sass/style.scss */
+.main-content {
+  padding-top: 25px;
+  color: #57565b;
+  font-size: 14px;
+  font-family: "Verdana", sans-serif;
+}
+/* line 374, ../sass/style.scss */
+.main-content blockquote {
+  border-color: #000964;
+  background: #ecf0f1;
+  font-family: "Arial", sans-serif;
+  color: #57565b;
+  font-size: 18px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+/* line 383, ../sass/style.scss */
+.main-content h3 {
+  font-size: 30px;
+  margin-top: 0;
+}
+/* line 387, ../sass/style.scss */
+.main-content h4 {
+  font-size: 18px;
+}
+/* line 392, ../sass/style.scss */
+.main-content .content-block:last-child .cont-wrap {
+  border: 0;
+}
+/* line 396, ../sass/style.scss */
+.main-content .content-block .cont-wrap {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #bdc3c7;
+}
+/* line 401, ../sass/style.scss */
+.main-content .content-block ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+/* line 405, ../sass/style.scss */
+.main-content .content-block ul li {
+  margin-bottom: 17px;
+  padding-left: 33px;
+  position: relative;
+}
+/* line 409, ../sass/style.scss */
+.main-content .content-block ul li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 18px;
+  height: 4px;
+  display: block;
+  background: #a9acbb;
+}
+/* line 422, ../sass/style.scss */
+.main-content .content-block p {
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+/* line 428, ../sass/style.scss */
+.main-content .sidebar h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* line 432, ../sass/style.scss */
+.main-content .sidebar .banners {
+  margin-bottom: 30px;
+}
+/* line 435, ../sass/style.scss */
+.main-content .sidebar .banner-block {
+  display: block;
+  position: relative;
+  margin-top: 20px;
+}
+/* line 439, ../sass/style.scss */
+.main-content .sidebar .banner-block .banner-wrap {
+  border-radius: 4px;
+  overflow: hidden;
+}
+/* line 443, ../sass/style.scss */
+.main-content .sidebar .banner-block img {
+  width: 100%;
+  height: auto;
+}
+/* line 447, ../sass/style.scss */
+.main-content .sidebar .banner-block h4 {
+  position: absolute;
+  color: #fff;
+  top: 18px;
+  left: 32px;
+  padding-right: 26px;
+  background: url(../img/banner_link.png) no-repeat right bottom;
+}
+
+/* line 458, ../sass/style.scss */
+footer {
+  padding-top: 20px;
+  padding-bottom: 90px;
+  background: #1a1b1c;
+  font-family: "Trebuchet MS";
+  color: #fff;
+}
+/* line 464, ../sass/style.scss */
+footer .col-xs-6 {
+  overflow: hidden;
+}
+/* line 467, ../sass/style.scss */
+footer ul {
+  text-align: right;
+  list-style: none;
+  padding-left: 0;
+}
+/* line 471, ../sass/style.scss */
+footer ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+/* line 474, ../sass/style.scss */
+footer ul li:last-child {
+  margin-right: 0;
+}
+/* line 477, ../sass/style.scss */
+footer ul li a {
+  color: inherit;
+  line-height: 26px;
+  display: inline-block;
+  text-decoration: underline;
+}
+/* line 482, ../sass/style.scss */
+footer ul li a:hover {
+  text-decoration: none;
+}
+/* line 488, ../sass/style.scss */
+footer span {
+  font-size: 12px;
+  color: #bdc3c7;
+}
+/* line 492, ../sass/style.scss */
+footer a {
+  color: inherit;
+}
+/* line 494, ../sass/style.scss */
+footer a:hover {
+  color: inherit;
+}
+/* line 498, ../sass/style.scss */
+footer .toup {
+  float: left;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: #1b3766 url(../img/toup.png) no-repeat center;
+  border-radius: 4px;
+  margin-right: 7px;
+}
+/* line 506, ../sass/style.scss */
+footer .toup:focus, footer .toup:active {
+  outline: none;
+}
+/* line 511, ../sass/style.scss */
+footer .left-footer {
+  padding-left: 12px;
+  float: left;
+}
+/* line 514, ../sass/style.scss */
+footer .left-footer ul {
+  text-align: left;
+}
+/* line 517, ../sass/style.scss */
+footer .left-footer .copy {
+  font-size: 12px;
+  position: relative;
+  padding-left: 0;
+  position: relative;
+  left: -12px;
+}
+/* line 524, ../sass/style.scss */
+footer .left-footer p {
+  margin-bottom: 4px;
+}
+/* line 528, ../sass/style.scss */
+footer .footer-logo {
+  overflow: hidden;
+  padding-top: 10px;
+  text-align: right;
+}
+/* line 532, ../sass/style.scss */
+footer .footer-logo p {
+  display: inline-block;
+  text-align: left !important;
+}
+/* line 536, ../sass/style.scss */
+footer .footer-logo a {
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+/* line 539, ../sass/style.scss */
+footer .footer-logo a:hover {
+  text-decoration: none;
+}
+/* line 543, ../sass/style.scss */
+footer .footer-logo img {
+  display: inline-block;
+  margin-right: 20px;
+  position: relative;
+  top: -10px;
+}
+
+@media (min-width: 1200px) {
+  /* line 552, ../sass/style.scss */
+  .container {
+    width: 970px;
+  }
+}
+@media (max-width: 1199px) {
+  /* line 558, ../sass/style.scss */
+  footer .toup {
+    margin-right: 7px;
+  }
+}
+@media (max-width: 991px) {
+  /* line 565, ../sass/style.scss */
+  header h2 {
+    margin-left: 15px;
+  }
+
+  /* line 569, ../sass/style.scss */
+  .nav > li > a {
+    font-size: 11px !important;
+    padding: 0 11px !important;
+  }
+
+  /* line 574, ../sass/style.scss */
+  footer .left-footer {
+    padding-left: 0;
+  }
+  /* line 576, ../sass/style.scss */
+  footer .left-footer .copy {
+    left: 0;
+  }
+  /* line 580, ../sass/style.scss */
+  footer .toup {
+    display: none;
+  }
+
+  /* line 586, ../sass/style.scss */
+  .billboard .playarea .aquar-l {
+    top: 8px;
+    left: -75px;
+  }
+  /* line 590, ../sass/style.scss */
+  .billboard .playarea .neon-l {
+    top: 8px;
+    right: -75px;
+  }
+}
+@media (max-width: 767px) {
+  /* line 600, ../sass/style.scss */
+  header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  /* line 603, ../sass/style.scss */
+  header .header-logo {
+    float: none;
+    margin-bottom: 0;
+  }
+  /* line 607, ../sass/style.scss */
+  header h2 {
+    display: block;
+    float: none;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  /* line 613, ../sass/style.scss */
+  header .header-config {
+    display: none;
+  }
+
+  /* line 619, ../sass/style.scss */
+  .billboard .navbar {
+    margin-bottom: 0;
+    min-height: 1px;
+  }
+  /* line 622, ../sass/style.scss */
+  .billboard .navbar .nav {
+    height: auto !important;
+    margin: 0 !important;
+  }
+  /* line 625, ../sass/style.scss */
+  .billboard .navbar .nav a {
+    line-height: 33px !important;
+  }
+  /* line 627, ../sass/style.scss */
+  .billboard .navbar .nav a .car {
+    float: right;
+    margin-top: 13px;
+  }
+  /* line 635, ../sass/style.scss */
+  .billboard .navbar .nav .dropdown-menu {
+    position: static;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* line 640, ../sass/style.scss */
+  .billboard .navbar .nav .dropdown-menu a {
+    line-height: 23px !important;
+  }
+  /* line 645, ../sass/style.scss */
+  .billboard .navbar .navbar-collapse {
+    border: 0 !important;
+    padding: 0;
+  }
+  /* line 650, ../sass/style.scss */
+  .billboard .breadcrumbs {
+    display: none;
+  }
+
+  /* line 654, ../sass/style.scss */
+  .banner-block {
+    float: left;
+    width: 50%;
+  }
+}
+@media (max-width: 700px) {
+  /* line 663, ../sass/style.scss */
+  .billboard .playarea {
+    background: none;
+    height: 300px;
+  }
+  /* line 666, ../sass/style.scss */
+  .billboard .playarea .play-btn {
+    display: none;
+  }
+  /* line 669, ../sass/style.scss */
+  .billboard .playarea .aquar-l {
+    left: 50%;
+    margin-left: -156px;
+  }
+  /* line 673, ../sass/style.scss */
+  .billboard .playarea .neon-l {
+    top: 92px;
+    right: 50%;
+    margin-right: -156px;
+  }
+
+  /* line 680, ../sass/style.scss */
+  footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  /* line 683, ../sass/style.scss */
+  footer .col-xs-6 {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: left !important;
+  }
+  /* line 689, ../sass/style.scss */
+  footer .footer-logo {
+    text-align: left;
+  }
+  /* line 691, ../sass/style.scss */
+  footer .footer-logo p, footer .footer-logo img {
+    float: none;
+    display: inline-block;
+  }
+  /* line 696, ../sass/style.scss */
+  footer ul {
+    text-align: left !important;
+  }
+}
+@media (max-width: 440px) {
+  /* line 703, ../sass/style.scss */
+  .banner-block {
+    float: none;
+    width: 100%;
+  }
+
+  /* line 709, ../sass/style.scss */
+  .billboard.nonormalh h1 {
+    font-size: 33px;
+  }
+}

@@ -2,6 +2,7 @@
 $textcolor: #000;
 $bgcolor: #fff;
 $contentcolor: #57565b;
+$neon: #ff6000;
 
 $verdana: 'Verdana', sans-serif;
 $arial: 'Arial', sans-serif;
@@ -25,20 +26,24 @@ a:focus{
 button:focus{
 	outline: none;
 }
+.neoncolor, .neoncolor a{
+	color: $neon !important;
+}
 .container, header, footer,.billboard{
 	min-width: 320px;
 }
 header{
-	padding-top: 15px;
-	padding-bottom: 15px;
+	// padding-bottom: 15px;
 	position: relative;
 	z-index: 100;
 	.header-logo{
+		margin-top: 15px;
+		margin-bottom: 15px;
 		float: left;
 	}
 	h2{
 		display: inline-block;
-		margin: 13px 0 0;
+		margin: 25px 0 0;
 		float: left;
 		margin-left: 30px;
 		text-transform: uppercase;
@@ -54,52 +59,59 @@ header{
 		text-transform: uppercase;
 		color: #1b3766;
 		position: relative;
-		margin-top: 13px;
 		font-family: "Trebuchet MS";
 		font-weight: 400;
+		width: 183px;
+		text-align: center;
+		@include transition(all 400ms);
 		.car{
 			margin-left: 10px;
 			display: inline-block;
 			width: 14px;
 			height: 10px;
-			background: url(img/sprite_arrow.png) no-repeat;
-			background-position: left -10px !important;
+			background: url(../img/sprite_arrow.png) no-repeat;
+			background-position: left -10px;
+		}
+		&:hover{
+			background: rgba(0,0,0,.39);
+			>a{
+				color: #fff;
+			}
+			.car{
+				background-position: left top;
+			}
 		}
 		a{
 			color: inherit;
-			@include transition(all 300ms); 
+			line-height: 75px;
+			display: inline-block;
+			@include transition(all 300ms);
+			&:hover{
+				text-decoration: none;
+			} 
 		}
 		ul{
+			text-align: left;
 			display: none;
 			list-style: none;
 			padding-left: 0;
 			position: absolute;
-			top: 15px;
-			left: -40px;
-			right: 0;
+			bottom: -139px;
+			left: 0;
 			background: rgba(0,0,0,.39);
-			min-width: 183px;
-			border-top: 32px solid #fff;
+			width: 183px;
+			
 			li{
 				text-transform: uppercase;
 				a{
 					display: block;
 					line-height: 43px;
-					padding-left: 39px;
+					padding-left: 30px;
 					color: #1e86bb;
 					&:hover{
-						color: #ff6000;
-						text-decoration: none;
-					}
-				}
-				&.active{
-					a{
 						background: #fff;
-					}
-					&:hover{
-						a{
-							color: inherit;
-						}
+						color: inherit;
+						text-decoration: none;
 					}
 				}
 			}
@@ -161,11 +173,11 @@ header{
 			display: inline-block;
 			width: 14px;
 			height: 10px;
-			background: url(img/sprite_arrow.png) no-repeat;
+			background: url(../img/sprite_arrow.png) no-repeat;
 			}
 		>li{
 			>a{
-				padding: 0 17px;
+				padding: 0 13.5px;
 				line-height: 73px;
 				color: #fff;
 				font-size: 12px;
@@ -232,7 +244,7 @@ header{
 			color: #fff;
 			li{
 				padding-right: 35px;
-				background: url(img/bread_arrow.png) no-repeat right center;
+				background: url(../img/bread_arrow.png) no-repeat right center;
 				margin-right: 13px;
 				display: inline-block;
 				a{
@@ -287,13 +299,13 @@ header{
 		position: relative;
 		margin: 0 auto 67px;
 		height: 405px;
-		background: url(img/play_bg.png) center;
+		background: url(../img/play_bg.png) center;
 		.play-btn{
 			position: absolute;
 			width: 41px;
 			height: 50px;
 			border: 0;
-			background: url(img/play_btn.png) no-repeat left top;
+			background: url(../img/play_btn.png) no-repeat left top;
 			left: 50%;
 			top: 50%;
 			margin-left: -17px;
@@ -311,7 +323,7 @@ header{
 			text-align: center;
 			padding-top: 8px;
 			@include transition(transform 300ms);
-			background: url(img/mainl_sprite.png) no-repeat;
+			background: url(../img/mainl_sprite.png) no-repeat;
 			h4{
 				color: #1e86bb;
 				text-transform: uppercase;
@@ -438,7 +450,7 @@ header{
 				top: 18px;
 				left: 32px;
 				padding-right: 26px;
-				background: url(img/banner_link.png) no-repeat right bottom;
+				background: url(../img/banner_link.png) no-repeat right bottom;
 			}
 		}
 	}
@@ -488,7 +500,7 @@ footer{
 		width: 40px;
 		height: 40px;
 		border: 0;
-		background: #1b3766 url(img/toup.png) no-repeat center;
+		background: #1b3766 url(../img/toup.png) no-repeat center;
 		border-radius: 4px;
 		margin-right: 7px;
 		&:focus, &:active{
@@ -549,6 +561,11 @@ footer{
 	}
 }
 @media (max-width: 991px){
+	header{
+		h2{
+			margin-left: 15px;
+		}
+	}
 	.nav>li>a{
 		font-size: 11px !important;
 		padding: 0 11px !important;
@@ -581,8 +598,11 @@ footer{
 }
 @media (max-width: 767px){
 	header{
+		padding-top: 15px;
+		padding-bottom: 15px;
 		.header-logo{
 			float: none;
+			margin-bottom: 0;
 		}
 		h2{
 			display: block;

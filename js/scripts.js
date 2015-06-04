@@ -1,7 +1,7 @@
 $(function(){
 
 	$('#header-config').hover(function(){
-		$(this).find('ul').fadeToggle();
+		$(this).find('ul').stop().fadeToggle();
 	});
 
 	// Прокрутка вверх
