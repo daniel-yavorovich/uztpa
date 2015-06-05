@@ -45,4 +45,17 @@ $(function(){
 		$(".fancybox").fancybox();
 	};
 
+	//factory
+	$('.pick').hover(function(){
+		$(this).siblings('img').stop().css('opacity',1);
+	},function(){
+		$(this).siblings('img').stop().css('opacity',0);
+	})
+	$('.factory-block .links a').hover(function(){
+		var section = $(this).attr('data-section')
+		$('.object').find('div.'+section+'-section img').stop().css('opacity',1);
+	},function(){
+		var section = $(this).attr('data-section')
+		$('.object').find('div.'+section+'-section img').stop().css('opacity',0);
+	})
 });
