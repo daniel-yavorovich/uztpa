@@ -58,4 +58,23 @@ $(function(){
 		var section = $(this).attr('data-section')
 		$('.object').find('div.'+section+'-section img').stop().css('opacity',0);
 	})
+
+
+	 var maxHeight = 0;
+        $('.page-preview').each(function(){
+          if ( $(this).height() > maxHeight ){
+            maxHeight = $(this).height();
+          }
+        });
+        $('.page-preview').height(maxHeight);
+    $(window).resize(function(){
+        var maxHeight = 0;
+        $('.page-preview').each(function(){
+         $(this).css('height','auto');
+          if ( $(this).height() > maxHeight ){
+            maxHeight = $(this).height();
+          }
+        });
+        $('.page-preview').height(maxHeight);
+    });
 });
