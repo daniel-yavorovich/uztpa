@@ -669,6 +669,8 @@ header{
 				.page-preview-wrap{
 					padding: 10.5px;
 					.page-preview{
+						background-position: center center;
+						background-size: cover;
 						padding: 60px 60px 60px 30px;
 						h4{
 							z-index: 80;
