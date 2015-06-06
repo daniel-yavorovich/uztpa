@@ -105,6 +105,9 @@ $(function(){
 		};
 		return false;
 	});
+	
+	//ровняем иконки на странице среды
+	$('.sreda-block-wrap img').css('top', ($('.sreda-block-wrap').height() - $('.sreda-block-wrap img').height())/2);
 
 	//factory
 	$('.factory-block a.section-link').hover(function(){		
@@ -159,5 +162,7 @@ $(function(){
           }
         });
         $('.page-preview').height(maxHeight);
+
+        $('.sreda-block-wrap img').css('top', ($('.sreda-block-wrap').height() - $('.sreda-block-wrap img').height())/2);
     });
 });
