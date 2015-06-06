@@ -51,13 +51,59 @@ $(function(){
 	};
 
 	//form
-	$('.input-wrap input').keyup(function(){
+	$(document).on('keyup', '.input-wrap input', function(){
 		if ($(this).val() != '') {
 			$(this).parent().addClass('corect');
+			$(this).css('border-color', '');
+			$(this).parent().find('.incorect-span').remove();
 		}
 		else{
 			$(this).parent().removeClass('corect');
 		}
+	});
+
+	$(document).on('submit', 'form', function(){
+		var form = $(this),
+		formH = form.height(),
+		formCont = form.html(),
+		error = true,
+		data = form.serialize();
+		form.find('input').each(function(){
+			if ($(this).val() == '') {
+				$(this).css('border-color', '#ff4242');
+				if ($(this).parent().find('.incorect-span').length == 0) {
+					$(this).parent().append('<span class="incorect-span">Заполните поле</div>')
+				};
+				error = false;
+			};
+		});
+		if (error == true) {
+			$.ajax({
+				type: "POST",
+				url: "mail.php",
+				data: data,
+				beforeSend: function(){
+					form.find('button[type=submit]').attr('disabled', true)
+				},
+				success: function(resp){
+					form.height(formH).html('<div class="succ-mess"><p>Запрос успешно отправлен!<span>Мы свяжемся с Вами в удобное для Вас время</span></p></div>');
+					form.css('padding-top', (formH-175)/2);
+				},
+				error: function (xhr, ajaxOptions, thrownError) { 
+		            alert(xhr.status); 
+		            alert(thrownError); 
+		        },
+		        complete: function(){
+		        	setTimeout(function(){
+		        		form.find('.succ-mess').remove();
+		        		form.css('padding-top', '');
+						form.height('').html(formCont).find('.input-wrap').removeClass('corect');
+						
+		        	},5000);
+				}   
+			});
+		};
+		return false;
 	});
 
 	//factory
