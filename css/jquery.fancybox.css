@@ -75,7 +75,7 @@
 	max-height: 100%;
 }
 
-#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+#fancybox-loading, .fancybox-prev span, .fancybox-next span {
 	background-image: url('../img/fancybox/fancybox_sprite.png');
 }
 
@@ -99,14 +99,17 @@
 
 .fancybox-close {
 	position: absolute;
-	top: -18px;
-	right: -18px;
-	width: 36px;
-	height: 36px;
+	top: 0px;
+	right: -25px;
+	width: 17px;
+	height: 17px;
 	cursor: pointer;
 	z-index: 8040;
+	background: url(../img/close.png) no-repeat center;
 }
-
+.fancybox-close:hover{
+	opacity: 0.8;
+}
 .fancybox-nav {
 	position: absolute;
 	top: 0;
@@ -165,7 +168,7 @@
 /* Overlay helper */
 
 .fancybox-lock {
-    overflow: hidden !important;
+    /*overflow: hidden !important;*/
     width: auto;
 }
 

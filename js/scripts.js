@@ -1,5 +1,4 @@
 $(function(){
-
 	$('#header-config').hover(function(){
 		$(this).find('ul').stop().fadeToggle();
 	});
@@ -18,12 +17,16 @@ $(function(){
 	})
 
 	// bg с html
-	$('div[data-bg]').each(function(){
-		var src = 'url('+$(this).attr('data-bg')+')';
-		$(this).css('background-image', src);
-		if ($(this).attr('data-pos')) {
-			$(this).css('background-position', $(this).attr('data-pos')+' bottom');
-		};
+	$('[data-bg]').each(function(){
+		// var src = 'url('+$(this).attr('data-bg')+')';
+		var src = ''+$(this).attr('data-bg');
+		if (src === 'transparent' || src.slice(0,1) === '#') $(this).css('background-color', src)
+		else{
+			$(this).css('background-image', 'url('+src+')');
+			if ($(this).attr('data-pos')) {
+				$(this).css('background-position', $(this).attr('data-pos')+' bottom');
+			};
+		}
 	});
 
 	// fancybox видео
@@ -42,24 +45,58 @@ $(function(){
 	}
 
 	if ($(".fancybox").length>0) {
-		$(".fancybox").fancybox();
+		$(".fancybox").fancybox({
+			padding:0
+		});
 	};
 
+	//form
+	$('.input-wrap input').keyup(function(){
+		if ($(this).val() != '') {
+			$(this).parent().addClass('corect');
+		}
+		else{
+			$(this).parent().removeClass('corect');
+		}
+	});
+
 	//factory
-	$('.pick').hover(function(){
-		$(this).siblings('img').stop().css('opacity',1);
-	},function(){
-		$(this).siblings('img').stop().css('opacity',0);
-	})
-	$('.factory-block .links a').hover(function(){
+	$('.factory-block a.section-link').hover(function(){		
 		var section = $(this).attr('data-section')
-		$('.object').find('div.'+section+'-section img').stop().css('opacity',1);
+		$('.object').find('#'+section).attr('data-hov','active');
 	},function(){
 		var section = $(this).attr('data-section')
-		$('.object').find('div.'+section+'-section img').stop().css('opacity',0);
+		$('.object').find('#'+section).attr('data-hov','diss');
 	})
-
-
+	$('.sm-section').hover(function(){
+		$(this).addClass("active")
+	})
+	$('.sm-section').click(function(){
+		var sId = $(this).attr('id');
+		$.fancybox.open([
+			{
+				href: '#'+sId+'p',
+				padding:0,
+				closeBtn:false,
+				maxWidth:486,
+				helpers : {
+	        overlay : {
+	          css : {
+	            'background' : 'rgba(27, 54, 100, 0.8)'
+		        }
+			    }
+		    }
+			}
+		])
+	})
+	$('.popup-close').click(function(){
+		$.fancybox.close()
+	})
+	$(window).resize(function(){
+		if($(window).width() < (768-17))	{
+			$.fancybox.close()			
+		}
+	})
 	 var maxHeight = 0;
         $('.page-preview').each(function(){
           if ( $(this).height() > maxHeight ){
