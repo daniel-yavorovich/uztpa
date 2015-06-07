@@ -20,7 +20,8 @@ $(function(){
 	$('[data-bg]').each(function(){
 		// var src = 'url('+$(this).attr('data-bg')+')';
 		var src = ''+$(this).attr('data-bg');
-		if (src === 'transparent' || src.slice(0,1) === '#') $(this).css('background-color', src)
+		if (src === 'transparent' || src.slice(0,1) === '#')
+			$(this).css('background-color', src)
 		else{
 			$(this).css('background-image', 'url('+src+')');
 			if ($(this).attr('data-pos')) {
@@ -109,6 +110,19 @@ $(function(){
 	//ровняем иконки на странице среды
 	$('.sreda-block-wrap img').css('top', ($('.sreda-block-wrap').height() - $('.sreda-block-wrap img').height())/2);
 
+	// разворот карты
+	$(document).on('click', '.mapfull', function(){
+		var map = $(this).parent();
+		if (!map.hasClass('full')) {
+			map.css({'position':'fixed','height': 'auto'}).addClass('full');
+			$('body').css('overflow', 'hidden');
+		}
+		else{
+			map.css({'position': 'relative', 'height': ''}).removeClass('full');
+			$('body').css('overflow', '');
+		}
+	});
+
 	//factory
 	$('.factory-block a.section-link').hover(function(){		
 		var section = $(this).attr('data-section')
@@ -118,7 +132,9 @@ $(function(){
 		$('.object').find('#'+section).attr('data-hov','diss');
 	})
 	$('.sm-section').hover(function(){
-		$(this).addClass("active")
+		$(this).attr('data-hov','active');
+	},function(){
+		$(this).attr('data-hov','diss');
 	})
 	$('.sm-section').click(function(){
 		var sId = $(this).attr('id');
@@ -164,5 +180,7 @@ $(function(){
         $('.page-preview').height(maxHeight);
 
         $('.sreda-block-wrap img').css('top', ($('.sreda-block-wrap').height() - $('.sreda-block-wrap img').height())/2);
+
     });
+	$('.left-sidebar').css('height',$('.right-col').height()-40)
 });
