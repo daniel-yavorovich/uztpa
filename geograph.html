@@ -177,13 +177,13 @@
 										<div class="col-md-6">
 											<label for="nameinp">Ваше имя:</label>
 											<div class="input-wrap">
-												<input type="text" name="nameinp" id="nameinp">
+												<input type="text" class="imp" name="nameinp" id="nameinp">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<label for="email">E-mail</label>
 											<div class="input-wrap">
-												<input type="text" name="emailinp" id="emailinp">
+												<input type="text" class="imp" name="emailinp" id="emailinp">
 											</div>
 										</div>
 									</div>
@@ -250,11 +250,10 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-hover-dropdown.min.js"></script>
 	<script src="js/jquery.formstyler.min.js"></script>
-	<script src="js/scripts.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLuWT1I4t1AuyILFdTGjUbrNrFCaAkQ0g"></script>
 	<script>
 		$('select').styler();
-		function initialize() {
+		
 			var mapOptions = {
 				zoom: 6,
 				center: new google.maps.LatLng(57.674300, 41.271716),
@@ -344,11 +343,13 @@
 			}
 			setMarkers(map, cities);
 			$('#map-canvas').prepend('<button class="mapfull"></button>');
-		}
 
-		google.maps.event.addDomListener(window, 'load', initialize);
+			google.maps.event.addListener(map, 'mousemove', function() {
+			  google.maps.event.trigger(map, 'resize');
+			});
 		// стилизация балуна
 		
 	</script>
+	<script src="js/scripts.js"></script>
 </body>
 </html>
