@@ -278,6 +278,8 @@ $(function(){
 	}
 	$('a.gallery').each(function(){
 		var sumPhoto = $(this).find('img').length
+		$(this).find('.cam').before("<span class='num'></span>")
+		$(this).find('.num').text(sumPhoto+" фото")
 		var firstPhoto = $(this).find('img').eq(0).attr('src');
 		$(this).attr('href',firstPhoto);
 		var i = 1;
@@ -289,6 +291,11 @@ $(function(){
 		}
 	})
 	$('a.gallery').fancybox({
-
+		maxWidth: '90%'
+	});
+	$('a.video').fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none',
+		maxWidth: '90%'
 	});
 });

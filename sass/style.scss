@@ -12,6 +12,19 @@ $exo2: 'Exo 2', sans-serif;
 $open: 'Open Sans', sans-serif;
 $tredusentMS: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
 
+@mixin blue-btn() {
+	position: relative;
+	color: #fff;
+	background: #1b3766;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 7px 30px;
+	font-size: 12px;
+	&:hover{
+		background: #2a559d;
+	}
+}
+
 @mixin rotate-crop($rad) {
 	-moz-transform: rotate($rad);
 	-ms-transform: rotate($rad);
@@ -531,6 +544,9 @@ a.fancybox{
 			color: $contentcolor;
 		}
 	}
+	.contact-map{
+		margin-bottom: 30px;
+	}
 	.content-block{
 		&.stratery{
 			img{
@@ -843,6 +859,32 @@ a.fancybox{
 						@include sprite-sprite(file-cam);
 						color: #fff;
 					}
+					&.movie{
+						@include sprite-sprite(file-video);
+						color: #fff;
+					}
+				}
+				.num{
+					position: absolute;
+					top: 15px;
+					right: 20px;
+					min-width: 65px;
+					background:rgba(0,0,0,.58);
+					text-align: center;
+					font-size: 12px;
+					color:#fff;
+					line-height: 20px;
+				}
+				.length{
+					position: absolute;
+					top: 15px;
+					right: 20px;
+					min-width: 65px;
+					background:rgba(0,0,0,.58);
+					text-align: center;
+					font-size: 12px;
+					color:#fff;
+					line-height: 20px;
 				}
 				h5{
 					margin-bottom: 2px;
@@ -991,6 +1033,8 @@ a.fancybox{
 			border-bottom: 1px solid #d4d4d4;
 			&:last-child{
 				border-bottom: 0;
+				margin-bottom: 0;
+				padding-bottom: 0;
 			}
 		}
 		a{
@@ -1053,7 +1097,7 @@ a.fancybox{
 				position: absolute;
 				color: #fff;
 				top: 18px;
-				left: 32px;
+				left: 22px;
 				padding-right: 26px;
 				&:after{
 					bottom: 1px;
@@ -1096,16 +1140,7 @@ a.fancybox{
 						}
 						a{
 							z-index: 80;
-							position: relative;
-							color: #fff;
-							background: #1b3766;
-							text-decoration: none;
-							font-weight: bold;
-							padding: 7px 30px;
-							font-size: 12px;
-							&:hover{
-								background: #2a559d;
-							}
+							@include blue-btn();
 						}				
 					}	
 				}				
@@ -1599,7 +1634,7 @@ footer{
 		overflow: hidden;
 		img{
 			float: left;
-			max-width: 40%;
+			max-width: 50%;
 			padding-right: 15px;
 		}
 		p{
