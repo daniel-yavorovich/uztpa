@@ -124,7 +124,7 @@ $(function(){
 	});
 
 	//factory
-	$('.factory-block a.section-link').hover(function(){		
+	$('.factory-block .section-link').hover(function(){		
 		var section = $(this).attr('data-section')
 		$('.object').find('#'+section).attr('data-hov','active');
 	},function(){
@@ -157,78 +157,138 @@ $(function(){
 	$('.popup-close').click(function(){
 		$.fancybox.close()
 	})
-	if($(window).width() > (768-17)){
+
+	//левое меню в биллбоард
+	if($(window).width() > (767-17)){
 		$('.left-sidebar').css('height',$('.right-col').height()-40)
+		if($('.billboard .left-nav')){
+			$('.left-sidebar .widget').prepend($('.billboard .left-nav'));
+		}
 	}else{
-		$('.left-sidebar').css('height','auto')		
+		$('.left-sidebar').css('height','auto')
+		if($('.left-sidebar .widget .left-nav')){
+			$('.billboard h1').after($('.left-sidebar .widget .left-nav'));
+		}
 	}
 	$(window).resize(function(){
-		if($(window).width() < (768-17))	{
+		if($(window).width() < (767-17))	{
 			$.fancybox.close()
 		}
-		if($(window).width() > (768-17)){
+		if($(window).width() > (767-17)){
 			$('.left-sidebar').css('height',$('.right-col').height()-40)
+			if($('.billboard .left-nav')){
+				$('.left-sidebar .widget').prepend($('.billboard .left-nav'));
+			}
 		}else{
-			$('.left-sidebar').css('height','auto')		
+			$('.left-sidebar').css('height','auto')
+			if($('.left-sidebar .widget .left-nav')){
+				$('.billboard h1').after($('.left-sidebar .widget .left-nav'));
+			}
 		}
 	})
-        if($(window).width() > (768-17)){
-		 			var maxHeight = 0;
-	        $('.page-preview').each(function(){
-	          if ( $(this).height() > maxHeight ){
-	            maxHeight = $(this).height();
-	          }
-	        });
-	        $('.page-preview').height(maxHeight);
+		//галереи
 
-	        var maxHeight = 0;
-	        $('.new-preview-grid-2').each(function(){
-	          if ( $(this).height() > maxHeight ){
-	            maxHeight = $(this).height();
-	          }
-	        });
-	        $('.new-preview-grid-2').height(maxHeight);
-	        var maxHeight = 0;
-	        $('.new-preview-grid-3').each(function(){
-	          if ( $(this).height() > maxHeight ){
-	            maxHeight = $(this).height();
-	          }
-	        });
-	        $('.new-preview-grid-3').height(maxHeight);        	
-        }else{
-        	$('.new-preview-grid-2').css('height','auto');
-        	$('.new-preview-grid-3').css('height','auto');
-        	$('.page-preview').css('height','auto');
+  addOnload(function(){
+		$('.new-preview-grid-2 .file').each(function(){
+			var filetype = $(this).text();
+			var fileClass = filetype.replace(/[.]/,"");
+			$(this).addClass(fileClass)
+			var fromTop = $(this).parent().find('img').height();
+		
+			$(this).css('top',fromTop+15-45);
+		})
+    if($(window).width() > (767-17)){
+ 			var maxHeight = 0;
+      $('.page-preview').each(function(){
+        if ( $(this).height() > maxHeight ){
+          maxHeight = $(this).height();
         }
-    $(window).resize(function(){
-        var maxHeight = 0;
-        $('.page-preview').each(function(){
-         $(this).css('height','auto');
-          if ( $(this).height() > maxHeight ){
-            maxHeight = $(this).height();
-          }
-        });
-        $('.page-preview').height(maxHeight);
-
-        var maxHeight = 0;
-        $('.new-preview-grid-2').each(function(){
-         $(this).css('height','auto');
-          if ( $(this).height() > maxHeight ){
-            maxHeight = $(this).height();
-          }
-        });
-        $('.new-preview-grid-2').height(maxHeight);
-
-        var maxHeight = 0;
-        $('.new-preview-grid-3').each(function(){
-         $(this).css('height','auto');
-          if ( $(this).height() > maxHeight ){
-            maxHeight = $(this).height();
-          }
-        });
-        $('.new-preview-grid-3').height(maxHeight);
-
-        $('.sreda-block-wrap img').css('top', ($('.sreda-block-wrap').height() - $('.sreda-block-wrap img').height())/2);
+      });
+      $('.page-preview').height(maxHeight);
+	      var maxHeight = 0;
+	      $('.new-preview-grid-2').each(function(){
+	        if ( $(this).height() > maxHeight ){
+	          maxHeight = $(this).height();
+	        }
+	      });
+	      $('.new-preview-grid-2').height(maxHeight);
+	      var maxHeight = 0;
+	      $('.new-preview-grid-3').each(function(){
+	        if ( $(this).height() > maxHeight ){
+	          maxHeight = $(this).height();
+	        }
+	      });
+	      $('.new-preview-grid-3').height(maxHeight);
+    }else{
+    	$('.new-preview-grid-2').css('height','auto');
+    	$('.new-preview-grid-3').css('height','auto');
+    	$('.page-preview').css('height','auto');
+    }
+  });   	
+  $(window).resize(function(){
+  	$('.new-preview-grid-2 .file').each(function(){
+			var fromTop = $(this).parent().find('img').height();			
+			$(this).css('top',fromTop+15-45);
+		})
+    var maxHeight = 0;
+    $('.page-preview').each(function(){
+     $(this).css('height','auto');
+      if ( $(this).height() > maxHeight ){
+        maxHeight = $(this).height();
+      }
     });
-    
+    $('.page-preview').height(maxHeight);
+
+    var maxHeight = 0;
+    $('.new-preview-grid-2').each(function(){
+     $(this).css('height','auto');
+      if ( $(this).height() > maxHeight ){
+        maxHeight = $(this).height();
+      }
+    });
+    $('.new-preview-grid-2').height(maxHeight);
+
+    var maxHeight = 0;
+    $('.new-preview-grid-3').each(function(){
+     $(this).css('height','auto');
+      if ( $(this).height() > maxHeight ){
+        maxHeight = $(this).height();
+      }
+    });
+    $('.new-preview-grid-3').height(maxHeight);
+
+    $('.sreda-block-wrap img').css('top', ($('.sreda-block-wrap').height() - $('.sreda-block-wrap img').height())/2);
+  });
+  function addOnload(callback) {
+	    if ( "undefined" != typeof(window.attachEvent) ) {
+	        return window.attachEvent("onload", callback);
+	    }
+	    else if ( window.addEventListener ){
+	        return window.addEventListener("load", callback, false);
+	    }
+	}
+
+	var numGallery = $('a.gallery').length;
+	var i = 0;
+	var nums = 1;
+	while (i < numGallery){
+		$('a.gallery').eq(i).attr('rel','gallery'+nums)
+		i++
+		nums++
+	}
+	$('a.gallery').each(function(){
+		var sumPhoto = $(this).find('img').length
+		var firstPhoto = $(this).find('img').eq(0).attr('src');
+		$(this).attr('href',firstPhoto);
+		var i = 1;
+		while (i < sumPhoto){
+			var photoSrc = $(this).find('img').eq(sumPhoto-(i)).attr('src');
+			var photoLink = "<a class='gallery' href='"+photoSrc+"' rel='"+$(this).attr('rel')+"'></a>"
+			$('footer').after(photoLink)
+			i++
+		}
+	})
+	$('a.gallery').fancybox({
+
+	});
 });
