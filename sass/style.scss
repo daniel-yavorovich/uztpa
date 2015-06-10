@@ -24,6 +24,18 @@ $tredusentMS: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sa
 		background: #2a559d;
 	}
 }
+@mixin big-blue-btn() {
+	position: relative;
+	color: #fff;
+	background: #1b3766;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 12px 30px;
+	font-size: 12px;
+	&:hover{
+		background: #2a559d;
+	}
+}
 
 @mixin rotate-crop($rad) {
 	-moz-transform: rotate($rad);
@@ -51,6 +63,9 @@ a:focus{
 }
 button:focus{
 	outline: none;
+}
+strong.black{
+	color: #000;
 }
 .neoncolor, .neoncolor a{
 	color: $neon !important;
@@ -430,6 +445,7 @@ header{
 .billboard-white{
 	color: #000;
 	min-height: 200px;
+	padding-bottom: 40px;
 	.breadcrumbs{
 		ul{
 			li{
@@ -582,6 +598,9 @@ a.fancybox{
 				line-height: 1.42;
 				strong{
 					color: #57565b;
+					&.black{
+						color: #000;
+					}
 				}
 			}
 			p:last-child, ul:last-child, ol:last-child{
@@ -781,7 +800,38 @@ a.fancybox{
 					display: block;
 					font-weight: bold;
 					color: #252525;
+				}				
+				&.vacansy{
+					padding-bottom: 20px;
+					margin-bottom: 35px;
+					position: relative;
+					overflow: hidden;
+					&:after{
+						position: absolute;
+						content:'';
+						left:20px;
+						right: 20px;
+						bottom: 0;
+						height: 1px;
+						background: #dcdcdc;
+					}
+					h4{
+						margin-bottom: 15px;
+					}
+					a{
+						display: inline-block;
+						@include blue-btn();
+					}
 				}
+				&.open-vacansy{
+					a{
+						display: inline-block;
+						@include big-blue-btn();
+						margin-top: 25px;
+					}
+				}
+			}
+			a.new-prebiew-block{
 				&:hover>h5{
 					text-decoration: underline;
 				}
@@ -999,6 +1049,21 @@ a.fancybox{
 				}
 			}
 		}
+		.object-preview{
+			height: 564px;
+			background:url(../img/object-pre.jpg) no-repeat center center;
+			padding: 247px 15px;
+			.object-prev-in{
+				text-align: center;
+				a{
+					@include blue-btn();
+					display: inline-block;
+				}
+				h4{
+					color: #fff;
+				}
+			}
+		}
 	}
 	.sidebar{
 		h4{
@@ -1167,10 +1232,13 @@ a.fancybox{
 					a{
 						float: left;
 						width: 50%;
-						padding: 0 30px;
+						padding: 0 15px;
 					}
+					.banner-wrap{
+						max-width: 280px;
+					}	
 				}
-			}			
+			}
 		}
 		&.left-sidebar{
 			padding-top: 25px;
@@ -1183,6 +1251,39 @@ a.fancybox{
 				width: 1px;
 				height: 100%;
 				background:#ecf0f1;
+			}
+		}
+		&.top-sidebar{
+			.banner-block{
+				&.blue-text{
+					h4{
+						color: #106da0; 
+						text-transform: uppercase;
+						font-size: 24px;
+						&:after{
+							@include sprite-sprite(blue_arrow);
+						}
+					}
+				}
+				&.orange-text{
+					h4{
+						color: #ff6000;
+						text-transform: uppercase;
+						font-size: 24px;
+						&:after{
+							@include sprite-sprite(orange_arrow);
+						}
+					}
+				}
+				h4{
+					&:after{						
+						bottom: 6px;
+						right: -7px;
+					}
+				}
+				.banner-wrap{
+					max-width: 100%;
+				}
 			}
 		}
 	}
@@ -1876,6 +1977,9 @@ footer{
 						a.banner-block{
 							padding: 0 15px;
 						}
+						.banner-wrap{
+							max-width: 213px;
+						}
 					}
 				}
 			}
@@ -1993,11 +2097,22 @@ footer{
 		}
 	}
 }
-
+@media (max-width: 570px){
+	.main-content .sidebar .banner-block h4{
+		font-size: 16px !important;
+	}
+	.main-content .sidebar.top-sidebar .banner-block h4:after{						
+		bottom: 2px !important;
+		right: -4px !important;
+	}
+	.main-content .sidebar .banner-block h4{
+		left: 12px;
+	}
+}
 @media (max-width: 440px){
 	.banner-block{
-		float: none;
-		width: 100%; 
+		float: none !important;
+		width: 100% !important;
 		max-width: 212.5px;
 		margin-left: auto;
 		margin-right: auto;

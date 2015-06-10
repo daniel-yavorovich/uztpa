@@ -277,21 +277,30 @@ $(function(){
 		nums++
 	}
 	$('a.gallery').each(function(){
-		var sumPhoto = $(this).find('img').length
-		$(this).find('.cam').before("<span class='num'></span>")
-		$(this).find('.num').text(sumPhoto+" фото")
-		var firstPhoto = $(this).find('img').eq(0).attr('src');
+		var sumPhoto = $(this).find('img').length-1
+		var firstPhoto = $(this).find('img').eq(1).attr('src');
 		$(this).attr('href',firstPhoto);
 		var i = 1;
 		while (i < sumPhoto){
-			var photoSrc = $(this).find('img').eq(sumPhoto-(i)).attr('src');
+			var photoSrc = $(this).find('img').eq(sumPhoto-i+1).attr('src');
 			var photoLink = "<a class='gallery' href='"+photoSrc+"' rel='"+$(this).attr('rel')+"'></a>"
 			$('footer').after(photoLink)
 			i++
 		}
+		$(this).find('.cam').before("<span class='num'></span>")
+		$(this).find('.num').text((sumPhoto)+" фото")
 	})
 	$('a.gallery').fancybox({
-		maxWidth: '90%'
+		maxWidth: '90%',
+		helpers	: {
+			title	: {
+				type: 'outside'
+			},
+			thumbs	: {
+				width	: 90,
+				height	: 60
+			}
+		}
 	});
 	$('a.video').fancybox({
 		openEffect	: 'none',
