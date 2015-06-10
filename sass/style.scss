@@ -73,6 +73,13 @@ strong.black{
 .container, header, footer,.billboard{
 	min-width: 320px;
 }
+.date{
+	text-decoration: none;
+	font-family: $arial;
+	display:block;
+	font-size: 12px;
+	color:#9f9f9f;
+}
 header{
 	// padding-bottom: 15px;
 	position: relative;
@@ -595,7 +602,7 @@ a.fancybox{
 		}
 	}
 	.content-block{
-		&.stratery{
+		&.strategy{
 			img{
 				width:100%;
 			}
@@ -648,7 +655,6 @@ a.fancybox{
 				}
 			}
 			img{
-				width: 100%;
 				display: block;
 				margin: 10px auto;
 			}
@@ -769,6 +775,36 @@ a.fancybox{
 
 				}
 			}
+			.partner-blocks{
+				.partner-block{
+					text-align: center;
+					color: rgba(0,0,0,.8);
+					text-decoration: none;
+					margin-top: 30px;
+					img{
+						max-width: 100%;
+						height: auto;
+					}
+					.partner-img-wrap{
+						border: 2px solid #bdc3c7;
+						padding-left: 25px;
+						padding-right: 25px;
+						display: table-cell;
+						vertical-align: middle;
+						position: relative;
+					}
+					&:hover{
+						.partner-img-wrap{
+							border: 2px solid #1b3664;
+						}
+					}
+					p{
+						margin-top: 15px;
+						display: inline-block;
+						min-height: 40px;
+					}
+				}
+			}
 		}
 		ul{
 			list-style: none;
@@ -869,13 +905,6 @@ a.fancybox{
 				padding: 0 20px;
 				margin: 8px 0 10px;
 				text-decoration: none;
-				.date{
-					text-decoration: none;
-					font-family: $arial;
-					display:block;
-					font-size: 12px;
-					color:#9f9f9f;
-				}
 				h5{
 					text-decoration: none;
 					display: block;
@@ -1179,8 +1208,24 @@ a.fancybox{
 			border-bottom: 1px solid #d4d4d4;
 			&:last-child{
 				border-bottom: 0;
-				margin-bottom: 0;
 				padding-bottom: 0;
+			}
+			img{
+				max-width: 100%;
+			}
+			.mini-news{
+				margin-bottom: 10px;
+				.date{
+					@extend .date;
+				}
+				h4{
+					text-transform: uppercase;
+					margin-bottom: 3px;
+				}
+				h5{
+					font-size: 12px;
+					margin-bottom: 3px;
+				}
 			}
 		}
 		a{
@@ -1199,6 +1244,9 @@ a.fancybox{
 		}
 		.banners{
 			margin-bottom: 30px;
+			&:last-child{
+				margin-bottom: 0;
+			}
 		}
 		.banner-block{
 			display: block;
@@ -1211,6 +1259,9 @@ a.fancybox{
 						background-position: right top;
 					}
 				}
+			}
+			&:last-child{
+				margin-bottom: 13px;
 			}
 			.banner-wrap{
 				border-radius: 4px;

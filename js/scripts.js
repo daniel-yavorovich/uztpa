@@ -127,38 +127,52 @@ $(function(){
 
 
 	$('.pagination a').click(function(e){
-		e.preventDefault();
-		var thisUrl = document.location.href.split("/"),
-		link = $(this),
-		page = link.attr('href'),
-		thisUrl = thisUrl[thisUrl.length-1],
-		string = '?order_by=-dates';
-	
-		if (link.parent().hasClass('active')) {
-			return false;
-		};
-
-		if (thisUrl.indexOf('order_by') != -1) {
-			thisUrl = thisUrl.split("?");
-			thisUrl = ((thisUrl[thisUrl.length-1].split("&"))[0]).split("=");
-			var order_by = thisUrl[thisUrl.length-1];
-			string = '?order_by=' + order_by + '&'+page;
-		}
-		else{
-			string += '&'+page;
-		};
+		if ($('#sort').length > 0) {
+			e.preventDefault();
+			var thisUrl = document.location.href.split("/"),
+			link = $(this),
+			page = link.attr('href'),
+			thisUrl = thisUrl[thisUrl.length-1],
+			string = '?order_by=-date';
 		
-		window.history.pushState('', ''+$('title').text(), ''+string);
-		window.location.reload();
+			if (link.parent().hasClass('active')) {
+				return false;
+			};
+
+			if (thisUrl.indexOf('order_by') != -1) {
+				thisUrl = thisUrl.split("?");
+				thisUrl = ((thisUrl[thisUrl.length-1].split("&"))[0]).split("=");
+				var order_by = thisUrl[thisUrl.length-1];
+				string = '?order_by=' + order_by + '&'+page;
+			}
+			else{
+				string += '&'+page;
+			};
+			
+			window.history.pushState('', ''+$('title').text(), ''+string);
+			window.location.reload();
+		}
 	});
 
 	$("#sort").change(function(){
-		var order_by = $(this).val(),
-		string = '?order_by=' + order_by;
-		window.history.pushState('', ''+$('title').text(), ''+string);
-		window.location.reload();
-
+		if ($('.pagination').length > 0) {
+			var order_by = $(this).val(),
+			string = '?order_by=' + order_by;
+			window.history.pushState('', ''+$('title').text(), ''+string);
+			window.location.reload();
+		};
 	});
+
+	// квадрат партнер
+	function kvad (){
+		$('.partner-img-wrap').each(function(){
+			$(this).outerWidth($(this).parent().width())
+			$(this).height($(this).outerWidth());
+			// $(this).css('left', ($(this).parent().width() - $(this).outerWidth())/2);
+		});
+		
+	}
+	kvad();
 
 	//factory
 	$('.factory-block .section-link').hover(function(){		
@@ -222,6 +236,8 @@ $(function(){
 				$('.billboard h1').after($('.left-sidebar .widget .left-nav'));
 			}
 		}
+
+		kvad();
 	})
 		//галереи
 
