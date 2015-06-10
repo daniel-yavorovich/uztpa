@@ -123,6 +123,43 @@ $(function(){
 		}
 	});
 
+	//формирование запроса
+
+
+	$('.pagination a').click(function(e){
+		e.preventDefault();
+		var thisUrl = document.location.href.split("/"),
+		link = $(this),
+		page = link.attr('href'),
+		thisUrl = thisUrl[thisUrl.length-1],
+		string = '?order_by=-dates';
+	
+		if (link.parent().hasClass('active')) {
+			return false;
+		};
+
+		if (thisUrl.indexOf('order_by') != -1) {
+			thisUrl = thisUrl.split("?");
+			thisUrl = ((thisUrl[thisUrl.length-1].split("&"))[0]).split("=");
+			var order_by = thisUrl[thisUrl.length-1];
+			string = '?order_by=' + order_by + '&'+page;
+		}
+		else{
+			string += '&'+page;
+		};
+		
+		window.history.pushState('', ''+$('title').text(), ''+string);
+		window.location.reload();
+	});
+
+	$("#sort").change(function(){
+		var order_by = $(this).val(),
+		string = '?order_by=' + order_by;
+		window.history.pushState('', ''+$('title').text(), ''+string);
+		window.location.reload();
+
+	});
+
 	//factory
 	$('.factory-block .section-link').hover(function(){		
 		var section = $(this).attr('data-section')
@@ -307,4 +344,32 @@ $(function(){
 		closeEffect	: 'none',
 		maxWidth: '90%'
 	});
+
+
+	//отправка резюме
+	$('a.send-resume').fancybox();
+	// $('#upload').ajaxUpload({
+ //    url: 'mail.php',
+ //    //Имя файлового поля ввода
+ //    name: 'uploadfile',
+ //    onSubmit: function(file, ext){
+ //      if (! (ext && /^(txt|doc|docx)$/.test(ext))){
+ //        // Валидация расширений файлов
+ //        status.text('Только тексовые файлы!');
+ //        return false;         
+ //      }
+ //      status.text('Загрузка...');
+ //    },
+ //    onComplete: function(file, response){
+ //      //Очищаем текст статуса
+ //      status.text('');
+ //      //Добавляем загруженные файлы в лист
+ //      if(response =="error"){
+ //        status.text("Ошибка при загрузке файла");
+ //      }else{
+ //        status.text(file);          
+ //      }
+ //    filename =  file;
+ //    }
+ //  })
 });

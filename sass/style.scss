@@ -1827,6 +1827,9 @@ footer{
 		}
 	}
 }
+.modal-form{
+	display: none;
+}
 #markerinfo{
 	width: 385px;
 	background: #fdfae9;
@@ -1896,6 +1899,7 @@ footer{
 	top: 25px !important;
 	left: 15px !important;
 }
+
 @media (min-width: 1200px){
 	.container {
 		width: 970px;
