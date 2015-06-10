@@ -180,7 +180,7 @@
 											<li>организация и контроль исполнения технического обслуживания  оборудования;</li>
 											<li>ведение необходимой документации на производстве.</li>
 										</ul>
-										<a href="#modal-from" class="send-resume">Отправить резюме</a>
+										<a href="#modal-form" class="modal-form-link">Отправить резюме</a>
 									</div>
 								</div>
 								<!-- end publishing -->
@@ -229,21 +229,40 @@
 		</div>
 		<!-- end container -->
 	</footer>
-	<div class="modal-from" id="modal-form">
+	<div class="modal-form" id="modal-form">
 		<form action="">
 			<div class="form-title">
-				<h3>Отправьте нам ваше резюме</h3>			
+				<h3>Хочу стать партнёром УЗТПА</h3>			
 			</div>
 			<div class="form-body">
-				<label for="name">Ваше имя:</label>
-				<input type="text" name="name">
-				<label for="phone">Телефон:</label>
-				<input type="text" name="phone">
-				<div id="upload" class="photo-rev">выбрать фото</div>
-				<span class="status"></span>
-				<button type="submit">отправить</button>
+				<div class="row">
+					<div class="col-md-12">
+						<label for="name">Ваше имя:</label>
+						<div class="input-wrap">
+							<input type="text" name="name">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<label for="phone">Телефон:</label>
+						<div class="input-wrap">
+							<input type="tel" name="phone">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="input-wrap">
+							<div class="selectbutton">Обзор</div>
+							<input type="file" name="file">
+						</div>
+					</div>
+				</div>
+				<button type="submit">Отправить</button>
 			</div>
 		</form>
+		<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"></a>
 	</div>
 	<script src="js/jquery.2.1.3.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

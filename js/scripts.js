@@ -205,9 +205,21 @@ $(function(){
 			}
 		])
 	})
-	$('.popup-close').click(function(){
+	$('.popup-close, .fancybox-close').click(function(){
 		$.fancybox.close()
 	})
+	$(".modal-form-link").fancybox({
+		maxWidth	: 500,
+		maxHeight	: 640,
+		minWidth: 200,
+		fitToView	: false,
+		height : 480,
+		autoSize	: true,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none',
+		closeBtn: false
+	});
 
 	//левое меню в биллбоард
 	if($(window).width() > (767-17)){

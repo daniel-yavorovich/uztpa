@@ -1062,6 +1062,7 @@ a.fancybox{
 					margin-bottom: 0;
 				}
 				img{
+					width: 100%;
 					margin: 3px 0;
 					max-width: 100%;
 				}
@@ -1572,7 +1573,7 @@ form{
 	select{
 		height: 42px;
 	}
-	input[type="text"]{
+	input[type="text"],input[type="tel"]{
 		height: 42px;
 		border: 1px solid #d0d6e0;
 		@include border-radius(5px);
@@ -1881,8 +1882,78 @@ footer{
 	}
 }
 .modal-form{
+	h3{
+		background: #1f3c6e;
+		margin-top: 0;
+		margin-bottom: 0;
+		text-align: center;
+		font-size: 24px;
+		color: #fff;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
 	display: none;
+	form{
+		background: none;
+	}
+	button{
+		position: static;
+	}
+	.form-body{
+		overflow: hidden;
+		padding-left: 90px;
+		padding-right: 90px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		box-sizing:content-box;
+		min-width: 320px;
+	}
+	.fancybox-close{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		@include sprite-sprite(white_close);
+	}
+	.input-wrap{
+		margin-bottom: 15px;
+	}
 }
+.range-wrap{
+	height: 85px;
+	.irs{
+		margin-top: 20px;
+		.irs-line{
+			height: 2px;
+			background: #e0e0e0;
+			top: 17px;
+		}
+		.irs-slider.single{
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: #1f3c6e;
+			top: 11px;
+			&:hover{
+				cursor: pointer;
+			}
+		}
+		.irs-grid-pol{
+			display: none;
+		}
+		.irs-grid-text{
+			font-size: 14px;
+			color: #000;
+			&.js-grid-text-0{
+				margin-left: -2.5% !important;
+			}
+			&.js-grid-text-3{
+				margin-left: -14.8% !important;
+			}
+		}
+	}
+}
+
+
 #markerinfo{
 	width: 385px;
 	background: #fdfae9;
@@ -2251,6 +2322,13 @@ footer{
 	.main-content .sidebar .banner-block h4{
 		left: 12px;
 	}
+	.modal-form{
+		.form-body{
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+	
 }
 @media (max-width: 440px){
 	.banner-block{
@@ -2289,4 +2367,26 @@ footer{
 			}
 		}
 	}
+	.modal-form{
+		.form-body{
+			min-width: 1px;
+			width: 263px;
+		}
+	}
+	.fancybox-wrap, .fancybox-inner{
+		width: 283px !important;
+	}
+	
+	.range-wrap{
+		.irs{
+			.irs-grid-text{
+				&.js-grid-text-3{
+					margin-left: -18.2% !important;
+				}
+			}
+		}
+		
+	}
+	
+	
 }
