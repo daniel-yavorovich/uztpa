@@ -182,24 +182,26 @@ $(function(){
 	}
 	kvad();
 
-	$('.owl-carousel').owlCarousel({
-	    loop:true,
-	    margin:10,
-	    nav:true,
-	    navText:false,
-	    callbacks: true,
-	    responsive:{
-	        0:{
-	            items:1
-	        },
-	        600:{
-	            items:2
-	        },
-	        1000:{
-	            items:3
-	        }
-	    }
-	})
+	if ($('.owl-carousel').length > 0) {
+		$('.owl-carousel').owlCarousel({
+		    loop:true,
+		    margin:10,
+		    nav:true,
+		    navText:false,
+		    callbacks: true,
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        600:{
+		            items:2
+		        },
+		        1000:{
+		            items:3
+		        }
+		    }
+		})
+	};
 
 	//factory
 	$('.factory-block .section-link').hover(function(){		
@@ -235,6 +237,7 @@ $(function(){
 	$('.popup-close, .fancybox-close').click(function(){
 		$.fancybox.close()
 	})
+	
 	$(".modal-form-link").fancybox({
 		maxWidth	: 500,
 		maxHeight	: 640,

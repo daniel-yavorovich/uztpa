@@ -601,6 +601,22 @@ a.fancybox{
 			}
 		}
 	}
+	.object-preview{
+			height: 564px;
+			background:url(../img/object-pre.jpg) no-repeat center center;
+			padding: 247px 15px;
+			margin-bottom: 20px;
+			.object-prev-in{
+				text-align: center;
+				a{
+					@include blue-btn();
+					display: inline-block;
+				}
+				h4{
+					color: #fff;
+				}
+			}
+		}
 	.content-block{
 		&.strategy{
 			img{
@@ -773,6 +789,36 @@ a.fancybox{
 					margin-bottom: 10px;
 					min-height: 30px;
 
+				}
+			}
+			.serts-block{
+				padding-top: 10px;
+				p{
+					font-size: 12px;
+				}
+				img{
+					max-width: 100%;
+					height: auto;
+					margin: auto;
+				}
+				a{
+					margin-left: 27px;
+					position: relative;
+					display: inline-block;
+					margin-top: 5px;
+					&:after{
+						display: none !important;
+					}
+					&:before{
+						content: '';
+						height: 19px;
+						width: 20px;
+						position: absolute;
+						@include sprite-sprite(zoom);
+						top: 50%;
+						margin-top: -9px;
+						left: -28px;
+					}
 				}
 			}
 			.owl-carousel{
@@ -1271,19 +1317,7 @@ a.fancybox{
 			}
 		}
 		.object-preview{
-			height: 564px;
-			background:url(../img/object-pre.jpg) no-repeat center center;
-			padding: 247px 15px;
-			.object-prev-in{
-				text-align: center;
-				a{
-					@include blue-btn();
-					display: inline-block;
-				}
-				h4{
-					color: #fff;
-				}
-			}
+			margin-bottom: 0;
 		}
 	}
 	.sidebar{
@@ -1351,7 +1385,7 @@ a.fancybox{
 			}
 		}
 		&>div{
-			margin-bottom: 20px;
+			// margin-bottom: 20px;
 		}
 		.banners{
 			margin-bottom: 30px;
