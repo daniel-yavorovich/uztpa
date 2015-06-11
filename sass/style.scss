@@ -453,7 +453,7 @@ header{
 .billboard-white{
 	color: #000;
 	min-height: 200px;
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 	.breadcrumbs{
 		ul{
 			li{
@@ -1069,6 +1069,14 @@ a.fancybox{
 					margin-bottom: 10px;
 				}
 			}
+			.news-content{
+				.date{
+					margin-bottom: 4px;
+				}
+				img{
+					margin-bottom: 10px;
+				}
+			}
 		}
 		ul{
 			list-style: none;
@@ -1162,7 +1170,91 @@ a.fancybox{
 				padding: 0 15px;
 			}
 		}
-		.publishing{
+		ul.pagination{
+			margin-bottom: 0;
+			margin-top: 30px;
+			li{
+				float: left;
+				padding-left: 0;
+				margin: 3px;
+				&:before{
+					display: none;
+				}
+				a,span{
+					font-family: $arial;
+					line-height: 30px;
+					text-align: center;
+					font-size: 14px;
+					color:#9b9b9b;
+					height: 31px;
+					width: 30px;
+					padding: 0;
+					background: #f4f4f4;
+					border-radius: 2px;
+					border: 1px solid #d8d8d8;
+					position: relative;
+					text-decoration: none;
+					@include transition(all 300ms);
+					&.dot{
+						line-height: 20px;
+					}
+					&:focus{
+						box-shadow: 0 3px 2px #ddd inset;
+					}			
+				}
+				span{
+					position: relative;
+					line-height: 20px;
+				}
+				&:hover a,&.active a{
+					border:1px solid #444;
+					color: #444;					
+				}
+				&.disabled a{
+					cursor: default;
+				}
+				&.disabled a:hover{
+					border: 1px solid #d8d8d8;
+					background: #f4f4f4;
+					color:#9b9b9b;
+				}
+				&:first-child a:before,&:first-child span:before{
+					position: absolute;
+					content:'';
+					height:14px;
+					width: 10px;
+					margin:auto;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					top: 0;
+					@include sprite-sprite(pag-prev); 
+				}
+				&:first-child a:hover:before{
+					@include sprite-sprite(pag-prev-hover); 
+				}
+				&:last-child a:before,&:last-child span:before{
+					position: absolute;
+					content:'';
+					height:14px;
+					width: 10px;
+					margin:auto;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					top: 0;
+					@include sprite-sprite(pag-next); 
+				}
+				&:last-child a:hover:before{
+					@include sprite-sprite(pag-next-hover); 
+				}
+			}
+		}
+		.object-preview{
+			margin-bottom: 0;
+		}
+	}
+	.publishing{
 			margin-left: -20px;
 			margin-right: -20px;
 			.new-preview-block{
@@ -1349,90 +1441,6 @@ a.fancybox{
 				}
 			}			
 		}
-		ul.pagination{
-			margin-bottom: 0;
-			margin-top: 30px;
-			li{
-				float: left;
-				padding-left: 0;
-				margin: 3px;
-				&:before{
-					display: none;
-				}
-				a,span{
-					font-family: $arial;
-					line-height: 30px;
-					text-align: center;
-					font-size: 14px;
-					color:#9b9b9b;
-					height: 31px;
-					width: 30px;
-					padding: 0;
-					background: #f4f4f4;
-					border-radius: 2px;
-					border: 1px solid #d8d8d8;
-					position: relative;
-					text-decoration: none;
-					@include transition(all 300ms);
-					&.dot{
-						line-height: 20px;
-					}
-					&:focus{
-						box-shadow: 0 3px 2px #ddd inset;
-					}			
-				}
-				span{
-					position: relative;
-					line-height: 20px;
-				}
-				&:hover a,&.active a{
-					border:1px solid #444;
-					color: #444;					
-				}
-				&.disabled a{
-					cursor: default;
-				}
-				&.disabled a:hover{
-					border: 1px solid #d8d8d8;
-					background: #f4f4f4;
-					color:#9b9b9b;
-				}
-				&:first-child a:before,&:first-child span:before{
-					position: absolute;
-					content:'';
-					height:14px;
-					width: 10px;
-					margin:auto;
-					left: 0;
-					right: 0;
-					bottom: 0;
-					top: 0;
-					@include sprite-sprite(pag-prev); 
-				}
-				&:first-child a:hover:before{
-					@include sprite-sprite(pag-prev-hover); 
-				}
-				&:last-child a:before,&:last-child span:before{
-					position: absolute;
-					content:'';
-					height:14px;
-					width: 10px;
-					margin:auto;
-					left: 0;
-					right: 0;
-					bottom: 0;
-					top: 0;
-					@include sprite-sprite(pag-next); 
-				}
-				&:last-child a:hover:before{
-					@include sprite-sprite(pag-next-hover); 
-				}
-			}
-		}
-		.object-preview{
-			margin-bottom: 0;
-		}
-	}
 	.sidebar{
 		h4{
 			margin-top: 0;
@@ -1483,6 +1491,12 @@ a.fancybox{
 				h5{
 					font-size: 12px;
 					margin-bottom: 3px;
+				}
+			}
+			.new-preview-grid-3{
+				padding-top: 0;
+				&:hover{
+					border-color: transparent;
 				}
 			}
 		}
@@ -1600,9 +1614,6 @@ a.fancybox{
 					}	
 				}				
 			}
-			h4{
-				padding-left: 15px;
-			}
 			.widget{
 				border-bottom: none;
 				h4{
@@ -1621,7 +1632,6 @@ a.fancybox{
 					margin-bottom: 10px;
 					a{
 						float: left;
-						width: 50%;
 						padding: 0 15px;
 					}
 					.banner-wrap{
@@ -2457,7 +2467,7 @@ video{
 	}
 	.banner-block{
 		float: left;
-		width: 50%;
+		// width: 50%;
 
 	}
 	.serts{
