@@ -68,6 +68,7 @@ $(function(){
 		formH = form.height(),
 		formCont = form.html(),
 		error = true,
+		email = true,
 		data = form.serialize();
 		form.find('input.imp').each(function(){
 			if ($(this).val() == '') {
@@ -78,7 +79,16 @@ $(function(){
 				error = false;
 			};
 		});
-		if (error == true) {
+		form.find('input.email').each(function(){
+			if ($(this).val().indexOf('@') == -1){
+				$(this).css('border-color', '#ff4242');
+				if ($(this).parent().find('.incorect-span').length == 0) {
+					$(this).parent().append('<span class="incorect-span">Некоректный email</div>')
+				};
+				email = false;
+			}
+		})
+		if (error == true && email == true) {
 			$.ajax({
 				type: "POST",
 				url: ".",
@@ -190,7 +200,7 @@ $(function(){
 			$(this).height($(this).outerWidth());
 			$(this).find('img').css('margin-top',($(this).height()-$(this).find('img').height())/2)
 		});
-		
+		$('.service-img-wrap').width($('.service-block').width());
 	}
 	
 
@@ -277,9 +287,9 @@ $(function(){
 		}
 	}
 	$(window).resize(function(){
-		if($(window).width() < (767-17))	{
-			$.fancybox.close()
-		}
+		// if($(window).width() < (767-17))	{
+		// 	$.fancybox.close()
+		// }
 		if($(window).width() > (767-17)){
 			$('.left-sidebar').css('height',$('.right-col').height()-40)
 			if($('.billboard .left-nav')){
@@ -411,12 +421,21 @@ $(function(){
 			}
 		}
 	});
+	var i = 0;
+	var count = 0;
+	var allVid = $('a.video').length;
+	console.log(allVid)
+	while(i < allVid){
+		count++
+		$('a.video').eq(i).attr('href','#video'+count);
+		$('a.video').eq(i).find('video').attr('id','video'+count);
+		i++;
+	}
 	$('a.video').fancybox({
 		openEffect	: 'none',
 		closeEffect	: 'none',
-		maxWidth: '90%'
+		maxWidth: '80%'
 	});
-
 
 	//отправка резюме
 
