@@ -87,7 +87,12 @@ $(function(){
 					form.find('button[type=submit]').attr('disabled', true)
 				},
 				success: function(resp){
-					form.height(formH).html('<div class="succ-mess"><p>Запрос успешно отправлен!<span>Мы свяжемся с Вами в удобное для Вас время</span></p></div>');
+					if(form.hasClass('.send-resume')){
+						main_text = '<div class="succ-mess"><p>Резюме успешно отправлено!<span>Мы свяжемся с Вами в ближайшее время</span></p></div>'
+					}else{
+						main_text = '<div class="succ-mess"><p>Запрос успешно отправлен!<span>Мы свяжемся с Вами в удобное для Вас время</span></p></div>'
+					}
+					form.height(formH).html(main_text);
 					form.css('padding-top', (formH-175)/2);
 				},
 				error: function (xhr, ajaxOptions, thrownError) { 
@@ -165,14 +170,36 @@ $(function(){
 
 	// квадрат партнер
 	function kvad (){
+		$('.owl-carousel').trigger('update.owl.carousel');
+		$('owl-item').each(function(){
+			$(this).find('.partner-img-wrap').height($(this).width()).width($(this).width());
+		});
 		$('.partner-img-wrap').each(function(){
 			$(this).outerWidth($(this).parent().width())
 			$(this).height($(this).outerWidth());
-			// $(this).css('left', ($(this).parent().width() - $(this).outerWidth())/2);
 		});
 		
 	}
 	kvad();
+
+	$('.owl-carousel').owlCarousel({
+	    loop:true,
+	    margin:10,
+	    nav:true,
+	    navText:false,
+	    callbacks: true,
+	    responsive:{
+	        0:{
+	            items:1
+	        },
+	        600:{
+	            items:2
+	        },
+	        1000:{
+	            items:3
+	        }
+	    }
+	})
 
 	//factory
 	$('.factory-block .section-link').hover(function(){		
@@ -218,7 +245,8 @@ $(function(){
 		closeClick	: false,
 		openEffect	: 'none',
 		closeEffect	: 'none',
-		closeBtn: false
+		closeBtn: true,
+		wrapCSS: 'modal-form-wrap'
 	});
 
 	//левое меню в биллбоард
@@ -375,29 +403,16 @@ $(function(){
 
 
 	//отправка резюме
-	$('a.send-resume').fancybox();
-	// $('#upload').ajaxUpload({
- //    url: 'mail.php',
- //    //Имя файлового поля ввода
- //    name: 'uploadfile',
- //    onSubmit: function(file, ext){
- //      if (! (ext && /^(txt|doc|docx)$/.test(ext))){
- //        // Валидация расширений файлов
- //        status.text('Только тексовые файлы!');
- //        return false;         
- //      }
- //      status.text('Загрузка...');
- //    },
- //    onComplete: function(file, response){
- //      //Очищаем текст статуса
- //      status.text('');
- //      //Добавляем загруженные файлы в лист
- //      if(response =="error"){
- //        status.text("Ошибка при загрузке файла");
- //      }else{
- //        status.text(file);          
- //      }
- //    filename =  file;
- //    }
- //  })
+
 });
+function getName (str){
+  if (str.lastIndexOf('\\')){
+      var i = str.lastIndexOf('\\')+1;
+  }
+  else{
+      var i = str.lastIndexOf('/')+1;
+  }						
+  var filename = str.slice(i);			
+  var uploaded = document.getElementById("file-form-text");
+  uploaded.innerHTML = filename;
+}
