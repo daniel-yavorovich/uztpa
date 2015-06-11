@@ -81,7 +81,7 @@ $(function(){
 		if (error == true) {
 			$.ajax({
 				type: "POST",
-				url: "mail.php",
+				url: ".",
 				data: data,
 				beforeSend: function(){
 					form.find('button[type=submit]').attr('disabled', true)
@@ -136,7 +136,7 @@ $(function(){
 			e.preventDefault();
 			var thisUrl = document.location.href.split("/"),
 			link = $(this),
-			page = link.attr('href'),
+			page = link.attr('href').slice(1),
 			thisUrl = thisUrl[thisUrl.length-1],
 			string = '?order_by=-date';
 		
@@ -155,6 +155,17 @@ $(function(){
 			};
 			
 			window.history.pushState('', ''+$('title').text(), ''+string);
+			window.location.reload();
+		}else{
+			e.preventDefault();
+			var link = $(this),
+			page = link.attr('href');
+
+			if (link.parent().hasClass('active')) {
+				return false;
+			};
+
+			window.history.pushState('', ''+$('title').text(), ''+page);
 			window.location.reload();
 		}
 	});
@@ -175,12 +186,13 @@ $(function(){
 			$(this).find('.partner-img-wrap').height($(this).width()).width($(this).width());
 		});
 		$('.partner-img-wrap').each(function(){
-			$(this).outerWidth($(this).parent().width())
+			// $(this).width($(this).parent().width())
 			$(this).height($(this).outerWidth());
+			$(this).find('img').css('margin-top',($(this).height()-$(this).find('img').height())/2)
 		});
 		
 	}
-	kvad();
+	
 
 	if ($('.owl-carousel').length > 0) {
 		$('.owl-carousel').owlCarousel({
@@ -237,7 +249,7 @@ $(function(){
 	$('.popup-close, .fancybox-close').click(function(){
 		$.fancybox.close()
 	})
-	
+
 	$(".modal-form-link").fancybox({
 		maxWidth	: 500,
 		maxHeight	: 640,
@@ -285,6 +297,7 @@ $(function(){
 		//галереи
 
   addOnload(function(){
+  	kvad();
 		$('.new-preview-grid-2 .file').each(function(){
 			var filetype = $(this).text();
 			var fileClass = filetype.replace(/[.]/,"");
@@ -334,7 +347,7 @@ $(function(){
       }
     });
     $('.page-preview').height(maxHeight);
-
+    kvad();
     var maxHeight = 0;
     $('.new-preview-grid-2').each(function(){
      $(this).css('height','auto');
@@ -419,3 +432,59 @@ function getName (str){
   var uploaded = document.getElementById("file-form-text");
   uploaded.innerHTML = filename;
 }
+// function fancyPopup() {
+//             // Declare some variables.
+//             var el = "";
+//             var posterPath = "";
+//             var replacement = "";
+//             var videoTag = "";
+//             var fancyBoxId = "";
+//             var posterPath = "";
+//             var videoTitle = "";
+ 
+//             // Loop over each video tag.
+//             $("video").each(function () {
+//                 // Reset the variables to empty.
+//                 el = "";
+//                 posterPath = "";
+//                 replacement = "";
+//                 videoTag = "";
+//                 fancyBoxId = "";
+//                 posterPath = "";
+//                 videoTitle = "";
+
+//                 // Get a reference to the current object.
+//                 el = $(this);
+
+//                 // Set some values we'll use shortly.
+//                 fancyBoxId = this.id + "_fancyBox";
+//                 videoTag = el.parent().html();      // This gets the current video tag and stores it.
+//                 posterPath = el.attr("poster");
+//                 videoTitle = "Play Video " + this.id;
+
+                
+//                 // Concatenate the linked image that will take the place of the <video> tag.
+//                 replacement = "<a title='" + videoTitle + "' id='" + fancyBoxId + "' href='javascript:;'><img src='" +
+//                     posterPath + "' class='img-link'/></a>"
+
+//                 // Replace the parent of the current element with the linked image HTML.
+//                 el.parent().replaceWith(replacement);
+
+//                 /*
+//                 Now attach a Fancybox to this item and set its attributes. 
+                   
+//                 This entire function acts as an onClick handler for the object to
+//                 which it's attached (hence the "end click function" comment).
+//                 */
+//                 $("[id=" + fancyBoxId + "]").fancybox(
+//                 {
+//                     'content': videoTag,
+//                     'title': videoTitle,
+//                     'autoDimensions': true,
+//                     'padding': 5,
+//                     'showCloseButton': true,
+//                     'enableEscapeButton': true,
+//                     'titlePosition': 'outside',
+//                 }); // end click function
+//             });
+//         }

@@ -6,6 +6,7 @@ $bgcolor: #fff;
 $contentcolor: #57565b;
 $neon: #ff6000;
 
+
 $verdana: 'Verdana', sans-serif;
 $arial: 'Arial', sans-serif;
 $exo2: 'Exo 2', sans-serif;
@@ -931,17 +932,13 @@ a.fancybox{
 				text-decoration: none;
 				margin-top: 15px;
 				img{
-					max-width: 100%;
+					display: inline-block;
+					max-width: 90%;
 					height: auto;
 					margin: auto;
 				}
 				.partner-img-wrap{
 					border: 2px solid #bdc3c7;
-					padding-left: 25px;
-					padding-right: 25px;
-					display: table-cell;
-					vertical-align: middle;
-					position: relative;
 				}
 				p{
 					margin-top: 15px;
