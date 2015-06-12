@@ -105,41 +105,17 @@ $(function(){
 					form.css('padding-top', (formH-175)/2);
 					setTimeout(function(){
 		        		form.find('.succ-mess').remove();
+		        		$.fancybox.close();
 		        		form.css('padding-top', '');
 						form.height('').html(formCont).find('.input-wrap').removeClass('corect');
-						
+						form.find('#file-form-text').text('Прикрепить резюме');
 		        	},5000);
-				}   
+				},
+				error: function (xhr, ajaxOptions, thrownError) { 
+		            alert(xhr.status); 
+		            alert(thrownError); 
+		        },
 			});
-			// $.ajax({
-			// 	type: "POST",
-			// 	url: ".",
-			// 	data: data,
-			// 	beforeSend: function(){
-			// 		form.find('button[type=submit]').attr('disabled', true)
-			// 	},
-			// 	success: function(resp){
-			// 		if(form.hasClass('.send-resume')){
-			// 			main_text = '<div class="succ-mess"><p>Резюме успешно отправлено!<span>Мы свяжемся с Вами в ближайшее время</span></p></div>'
-			// 		}else{
-			// 			main_text = '<div class="succ-mess"><p>Запрос успешно отправлен!<span>Мы свяжемся с Вами в удобное для Вас время</span></p></div>'
-			// 		}
-			// 		form.height(formH).html(main_text);
-			// 		form.css('padding-top', (formH-175)/2);
-			// 	},
-			// 	error: function (xhr, ajaxOptions, thrownError) { 
-		 //            alert(xhr.status); 
-		 //            alert(thrownError); 
-		 //        },
-		 //        complete: function(){
-		 //        	setTimeout(function(){
-		 //        		form.find('.succ-mess').remove();
-		 //        		form.css('padding-top', '');
-			// 			form.height('').html(formCont).find('.input-wrap').removeClass('corect');
-						
-		 //        	},5000);
-			// 	}   
-			// });
 		}
 		else{
 			return false;
