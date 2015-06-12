@@ -93,6 +93,8 @@ $(function(){
 				type: "POST",
 				url: ".",
 				data: data,
+				processData: false,
+				contentType: false,
 				beforeSend: function(){
 					form.find('button[type=submit]').attr('disabled', true)
 				},
@@ -307,6 +309,9 @@ $(function(){
 		//галереи
 
   addOnload(function(){
+  	if($(window).width() > (767-17)){
+	  	$('.slider-nav').css('margin-top',$('.slider-nav').height()/(-1)-5);
+		}
   	kvad();
 		$('.new-preview-grid-2 .file').each(function(){
 			var filetype = $(this).text();
@@ -424,7 +429,6 @@ $(function(){
 	var i = 0;
 	var count = 0;
 	var allVid = $('a.video').length;
-	console.log(allVid)
 	while(i < allVid){
 		count++
 		$('a.video').eq(i).attr('href','#video'+count);
@@ -437,7 +441,35 @@ $(function(){
 		maxWidth: '80%'
 	});
 
-	//отправка резюме
+	//слайдер в биллбоарде
+	$('.slider-top').slick({
+		slidesToShow: 1,
+	  slidesToScroll: 1,
+	  arrows: false,
+	  fade: true,
+	  cssEase: 'ease',
+  	asNavFor: '.slider-nav',
+  	waitForAnimate: false
+  });
+  $('.slider-nav').slick({
+	  slidesToShow: 3,
+	  slidesToScroll: 1,
+	  asNavFor: '.slider-top',
+  	centerMode: true,
+  	centerPadding: 0,
+	  arrows: false,
+	});
+	
+	$('.slider-nav .nav-item').click(function(){
+		var slideNum = $(this).attr('data-slick-index');
+		$('.slider-top').slick('slickGoTo',slideNum)
+		$('.slider-top').find('.slide-top').each(function(){
+			if($(this).attr('data-slick-index') == slideNum){
+				var src = ''+$(this).find('img').attr('src');
+				$('.billboard').css('background-image', 'url('+src+')');
+			}
+		})
+	})
 
 });
 function getName (str){
@@ -451,59 +483,4 @@ function getName (str){
   var uploaded = document.getElementById("file-form-text");
   uploaded.innerHTML = filename;
 }
-// function fancyPopup() {
-//             // Declare some variables.
-//             var el = "";
-//             var posterPath = "";
-//             var replacement = "";
-//             var videoTag = "";
-//             var fancyBoxId = "";
-//             var posterPath = "";
-//             var videoTitle = "";
- 
-//             // Loop over each video tag.
-//             $("video").each(function () {
-//                 // Reset the variables to empty.
-//                 el = "";
-//                 posterPath = "";
-//                 replacement = "";
-//                 videoTag = "";
-//                 fancyBoxId = "";
-//                 posterPath = "";
-//                 videoTitle = "";
 
-//                 // Get a reference to the current object.
-//                 el = $(this);
-
-//                 // Set some values we'll use shortly.
-//                 fancyBoxId = this.id + "_fancyBox";
-//                 videoTag = el.parent().html();      // This gets the current video tag and stores it.
-//                 posterPath = el.attr("poster");
-//                 videoTitle = "Play Video " + this.id;
-
-                
-//                 // Concatenate the linked image that will take the place of the <video> tag.
-//                 replacement = "<a title='" + videoTitle + "' id='" + fancyBoxId + "' href='javascript:;'><img src='" +
-//                     posterPath + "' class='img-link'/></a>"
-
-//                 // Replace the parent of the current element with the linked image HTML.
-//                 el.parent().replaceWith(replacement);
-
-//                 /*
-//                 Now attach a Fancybox to this item and set its attributes. 
-                   
-//                 This entire function acts as an onClick handler for the object to
-//                 which it's attached (hence the "end click function" comment).
-//                 */
-//                 $("[id=" + fancyBoxId + "]").fancybox(
-//                 {
-//                     'content': videoTag,
-//                     'title': videoTitle,
-//                     'autoDimensions': true,
-//                     'padding': 5,
-//                     'showCloseButton': true,
-//                     'enableEscapeButton': true,
-//                     'titlePosition': 'outside',
-//                 }); // end click function
-//             });
-//         }
