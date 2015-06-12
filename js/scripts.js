@@ -63,8 +63,8 @@ $(function(){
 		}
 	});
 
-	$(document).on('submit', 'form', function(){
-		var form = $(this),
+	$(document).on('click', 'button[type=submit]', function(){
+		var form = $(this).parents('form'),
 		formH = form.height(),
 		formCont = form.html(),
 		error = true,
@@ -89,16 +89,13 @@ $(function(){
 			}
 		})
 		if (error == true && email == true) {
-			$.ajax({
+			form.ajaxForm({
 				type: "POST",
 				url: ".",
-				data: data,
-				processData: false,
-				contentType: false,
-				beforeSend: function(){
+				beforeSubmit : function(){
 					form.find('button[type=submit]').attr('disabled', true)
 				},
-				success: function(resp){
+				success : function(){
 					if(form.hasClass('.send-resume')){
 						main_text = '<div class="succ-mess"><p>Резюме успешно отправлено!<span>Мы свяжемся с Вами в ближайшее время</span></p></div>'
 					}else{
@@ -107,11 +104,7 @@ $(function(){
 					form.height(formH).html(main_text);
 					form.css('padding-top', (formH-175)/2);
 				},
-				error: function (xhr, ajaxOptions, thrownError) { 
-		            alert(xhr.status); 
-		            alert(thrownError); 
-		        },
-		        complete: function(){
+				complete: function(){
 		        	setTimeout(function(){
 		        		form.find('.succ-mess').remove();
 		        		form.css('padding-top', '');
@@ -120,6 +113,35 @@ $(function(){
 		        	},5000);
 				}   
 			});
+			// $.ajax({
+			// 	type: "POST",
+			// 	url: ".",
+			// 	data: data,
+			// 	beforeSend: function(){
+			// 		form.find('button[type=submit]').attr('disabled', true)
+			// 	},
+			// 	success: function(resp){
+			// 		if(form.hasClass('.send-resume')){
+			// 			main_text = '<div class="succ-mess"><p>Резюме успешно отправлено!<span>Мы свяжемся с Вами в ближайшее время</span></p></div>'
+			// 		}else{
+			// 			main_text = '<div class="succ-mess"><p>Запрос успешно отправлен!<span>Мы свяжемся с Вами в удобное для Вас время</span></p></div>'
+			// 		}
+			// 		form.height(formH).html(main_text);
+			// 		form.css('padding-top', (formH-175)/2);
+			// 	},
+			// 	error: function (xhr, ajaxOptions, thrownError) { 
+		 //            alert(xhr.status); 
+		 //            alert(thrownError); 
+		 //        },
+		 //        complete: function(){
+		 //        	setTimeout(function(){
+		 //        		form.find('.succ-mess').remove();
+		 //        		form.css('padding-top', '');
+			// 			form.height('').html(formCont).find('.input-wrap').removeClass('corect');
+						
+		 //        	},5000);
+			// 	}   
+			// });
 		};
 		return false;
 	});
