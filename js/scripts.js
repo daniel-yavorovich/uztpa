@@ -103,9 +103,7 @@ $(function(){
 					}
 					form.height(formH).html(main_text);
 					form.css('padding-top', (formH-175)/2);
-				},
-				complete: function(){
-		        	setTimeout(function(){
+					setTimeout(function(){
 		        		form.find('.succ-mess').remove();
 		        		form.css('padding-top', '');
 						form.height('').html(formCont).find('.input-wrap').removeClass('corect');
@@ -464,7 +462,8 @@ $(function(){
 	});
 
 	//слайдер в биллбоарде
-	$('.slider-top').slick({
+	if ($('slider-top').length > 0) {
+		$('.slider-top').slick({
 		slidesToShow: 1,
 	  slidesToScroll: 1,
 	  arrows: false,
@@ -481,6 +480,8 @@ $(function(){
   	centerPadding: 0,
 	  arrows: false,
 	});
+	};
+	
 	
 	$('.slider-nav .nav-item').click(function(){
 		var slideNum = $(this).attr('data-slick-index');
