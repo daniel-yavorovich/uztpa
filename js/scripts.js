@@ -68,8 +68,8 @@ $(function(){
 		formH = form.height(),
 		formCont = form.html(),
 		error = true,
-		email = true,
-		data = form.serialize();
+		email = true;
+		// data = form.serialize();
 		form.find('input.imp').each(function(){
 			if ($(this).val() == '') {
 				$(this).css('border-color', '#ff4242');
@@ -140,8 +140,11 @@ $(function(){
 		 //        	},5000);
 			// 	}   
 			// });
-		};
-		return false;
+		}
+		else{
+			return false;
+		}
+		
 	});
 	
 	//ровняем иконки на странице среды
