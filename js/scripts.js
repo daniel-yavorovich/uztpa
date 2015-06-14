@@ -292,6 +292,7 @@ $(function(){
 			wrapCSS: 'modal-form-wrap'
 		});
 	};
+
 	
 
 	//левое меню в биллбоард

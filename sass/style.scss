@@ -2898,6 +2898,7 @@ footer{
 	background:#fdfae9;
 	font-family: $verdana;
 	border-radius: 5px;
+	position: relative;
 	.title{
 		border-radius: 5px 5px 0 0 ;
 		background:#fff;
@@ -2942,6 +2943,27 @@ footer{
 			margin-top: -5px;
 		}
 	}
+	.factory-nav{
+		position: absolute;
+		content:'';
+		top: 50%;
+		width: 9px;
+		height: 14px;
+		margin-top: -7px;
+		cursor: pointer;
+		&.prev{
+			@include sprite-sprite(pag-prev);
+			left: -20px;			
+		}
+		&.next{
+			@include sprite-sprite(pag-next);
+			right: -20px;			
+		}
+	}
+
+}
+.fancybox-inner{
+	overflow: visible !important;
 }
 .modal-form-wrap{
 	.fancybox-close{
