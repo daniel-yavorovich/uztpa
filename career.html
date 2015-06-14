@@ -3,9 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>География объектов</title>
+	<title>Карьера</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/jquery.formstyler.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=cyrillic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Exo+2:700&subset=cyrillic' rel='stylesheet' type='text/css'>
@@ -15,7 +14,7 @@
     <![endif]-->
 </head>
 <body>
-	<div class="wrapper" data-bg="#0d2246">	
+	<div class="wrapper careerbg" data-bg="img/careerbg.jpg">	
 		<header>
 			<!-- begin container  -->
 			<div class="container">
@@ -110,11 +109,10 @@
 						<div class="breadcrumbs">
 							<ul>
 								<li><a href="#">Главная страница</a></li>
-								<li><a href="#">О компании</a></li>
-								<li>География объектов</li>        
+								<li>Карьера</li>        
 							</ul>
 						</div>
-						<h1>География объектов</h1>
+						<h1>Карьера</h1>
 					</div>
 				</div>
 				<!-- end row -->
@@ -130,9 +128,17 @@
 					<div class="content-block row">
 						<div class="col-md-12">
 							<!-- begin cont-wrap  -->
-							<div class="cont-wrap">
-								<div id="map-canvas">
-								</div>
+							<div class="cont-wrap white">
+								<h4>Всё о карьере и профессиональном развитии в УЗТПА:</h4>
+								<ul>
+									<li>актуальные вакансии;</li>
+									<li>контакты отдела кадров;</li>
+									<li>преимущества компании как работодателя;</li>
+									<li>условия труда;</li>
+									<li>параметры, по которым мы принимаем на работу;</li>
+									<li>социальные гарантии;</li>
+									<li>мероприятия по обучению и повышению квалификации.</li>
+								</ul>
 							</div>
 							<!-- end cont-wrap -->
 						</div>
@@ -143,10 +149,10 @@
 				<div class="sidebar col-sm-12">
 					<!-- begin horizontal-banners  -->
 					<div class="row">
-						<div class="horizontal-banners col-sm-6 banners">
+						<div class="horizontal-banners col-sm-12 banners">
 							<div class="row">
 								<!-- begin banner-block  -->
-								<a href="#" class="col-sm-6 banner-block">
+								<a href="#" class="col-md-3 banner-block">
 									<div class="banner-wrap">
 										<div class="icon-wrap">
 											<img src="img/banner5.jpg" alt="Banner Image">
@@ -156,7 +162,17 @@
 								</a>
 								<!-- end banner-block -->
 								<!-- begin banner-block  -->
-								<a href="#" class="col-sm-6 banner-block">
+								<a href="#" class="col-md-3 banner-block">
+									<div class="banner-wrap">
+										<div class="icon-wrap">
+											<img src="img/banner1.jpg" alt="Banner Image">
+										</div>
+										<h4>Возможности<br> производства</h4>
+									</div>
+								</a>
+								<!-- end banner-block -->
+								<!-- begin banner-block  -->
+								<a href="#" class="col-md-3 banner-block">
 									<div class="banner-wrap">
 										<div class="icon-wrap">
 											<img src="img/banner1.jpg" alt="Banner Image">
@@ -168,44 +184,6 @@
 							</div>
 						</div>
 						<!-- end horizontal-banners -->
-						<!-- begin form-widget  -->
-						<div class="form-widget col-sm-6">
-							<form method="post">
-								<h4>Узнать о поставках в своем городе</h4>
-								<div class="form-wrap">
-									<div class="row">
-										<div class="col-md-6">
-											<label for="nameinp">Ваше имя:</label>
-											<div class="input-wrap">
-												<input type="text" class="imp" name="nameinp" id="nameinp">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<label for="email">E-mail</label>
-											<div class="input-wrap">
-												<input type="text" class="imp email" name="emailinp" id="emailinp">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6">
-											<label for="cityinp">Город</label>
-											<div class="select-wrap">
-												<select name="cityinp" id="cityinp">
-													<option value="Москва">Москва</option>
-													<option value="Санкт-Петербург">Санкт-Петербург</option>
-													<option value="Санкт-Петербург">Казань</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-md-6">
-										<button type="submit">Отправить запрос</button>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-						<!-- end form-widget -->
 					</div>
 				</div>
 			</div>
@@ -249,107 +227,6 @@
 	<script src="js/jquery.2.1.3.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-hover-dropdown.min.js"></script>
-	<script src="js/jquery.formstyler.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLuWT1I4t1AuyILFdTGjUbrNrFCaAkQ0g"></script>
-	<script>
-		$('select').styler();
-		
-			var mapOptions = {
-				zoom: 6,
-				center: new google.maps.LatLng(57.674300, 41.271716),
-				disableDefaultUI: true
-			}
-			var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-			var contentul = ['<li>Казанская ТЭЦ 3</li>',
-								'<li>Каширская ГРЭС</li>',
-								'<li>Пермская ГРЭС</li>',
-								'<li>Костромская ГРЭС</li>',
-								'<li>Калининградская ТЭЦ-2</li>',
-								'<li>ТЭЦ-8</li><li>ТЭЦ-9</li><li>ТЭЦ-12</li><li>ТЭЦ-16</li><li>ТЭЦ-20</li><li>ТЭЦ-25</li><li>ТЭЦ-26</li><li>ТЭЦ-28</li><li>РТЭС "Крылатское"</li><li>РТЭС "Южное Бутово"</li><li>РТЭС "Пенягино"</li><li>РТЭС "Тушино-4"</li><li>РТЭС "Перово"</li><li>РТЭС "Жулебино"</li><li>РТЭС "Ново-Московская"</li><li>РТЭС "Отрадное"</li>',
-								'<li>РТЭС-1</li><li>РТЭС-4</li>',
-								'<li>ТК по ул. Шателена</li><li>ТК на Большом проспекте</li><li>УВВ на распределительной</li><li>ТК по ул. Лени Голикова</li><li>Распределительная сеть 24-25 на участке от ТК-5 до УВВ-5</li><li>ТК-2</li><li>ТК на распределительной сети</li><li>УВВ на распределительной сети</li><li>ТК по ул. Грибоедова</li><li>Распределительная сеть ТК-24</li><li>ТК-51</li><li>ТК-163, распределительная сеть по Фонтанке</li><li>Распределительная сеть от ТК-7 до ТК-8</li><li>Распределительная сеть ТК-196</li>'			
-			];
-
-			var cities = [
-				['Казань', 55.787009, 49.139221, 8, contentul[0]],
-				['Кашира, Московская обл.', 54.843576, 38.186417, 7, contentul[1]],
-				['Добрянка, Пермский край', 58.449865, 56.416538, 6, contentul[2]],
-				['Волгореченск,  Костромская область', 57.443711, 41.159123, 5, contentul[3]],
-				['Калининград ', 54.715179, 20.514655, 4, contentul[4]],
-				['Москва', 55.755733, 37.617228, 3, contentul[5]],
-				['Зеленоград', 55.987016, 37.201083, 2, contentul[6]],
-				['Санкт-Петербург', 59.932586, 30.319564, 1, contentul[7]]
-			];
-
-			function setMarkers(map, locations) {
-				var image = {
-					url: 'img/marker.png',
-					size: new google.maps.Size(57, 57),
-					origin: new google.maps.Point(0,0),
-					anchor: new google.maps.Point(10, 10)
-				};
-
-				var infowindow = new google.maps.InfoWindow();
-	  
-				for (var i = 0; i < locations.length; i++) {
-					var city = locations[i];
-					var myLatLng = new google.maps.LatLng(city[1], city[2]);
-					var marker = new google.maps.Marker({
-						position: myLatLng,
-						map: map,
-						icon: image,
-						title: city[0],
-						zIndex: city[3]
-					});
-					var contentString = '<div id="markerinfo">'+
-										'<h4>'+city[0]+'</h4>'+
-										'<div id="markerinfocontent">'+
-										'<ul>'+ city[4] +
-										'</ul>'+
-										'</div>'+
-										'</div>';
-
-					google.maps.event.addListener(marker,'click', (function(marker,content){ 
-						return function() {
-						infowindow.setContent(content);	
-						infowindow.open(map,marker);
-					};
-					})(marker,contentString));
-
-
-
-					google.maps.event.addListener(infowindow, 'domready', function() {
-						var iwOuter = $('.gm-style-iw'),
-						iwBackground = iwOuter.prev();
-						iwBackground.children(':nth-child(2)').css({'display' : 'none'}).end()
-						.children(':nth-child(4)').css({'display' : 'none'});
-						iwOuter.prev().css({'display' : 'none'}).end()
-						.next().find('img').attr('src', 'img/markerclose.png').css({
-							'width' : '17px',
-							'height': '17px',
-							'bottom' : '0',
-							'top' : '0',
-							'left' : '0',
-							'right' : '0'
-						}).end().css({
-							'width' : '17px',
-							'height': '17px',
-							'right': '65px',
-							'top': '46px'
-						})
-
-					})
-				}
-			}
-			setMarkers(map, cities);
-			$('#map-canvas').prepend('<button class="mapfull"></button>');
-
-			google.maps.event.addListener(map, 'mousemove', function() {
-			  google.maps.event.trigger(map, 'resize');
-			});
-		// стилизация балуна
-		
-	</script>
 	<script src="js/scripts.js"></script>
 </body>
 </html>

@@ -330,6 +330,9 @@ $(function(){
 		//галереи
 
   addOnload(function(){
+  	$('.gallery-block .publishing .banner-block img').each(function(){
+			$(this).css('margin-left',$(this).width/2*(-1))
+		})
   	//картинка делаи по центру
 		$('.detail-img-wrap img').each(function(){
 			var mrTop = ($(this).parent().height() - $(this).height())/2;
@@ -351,6 +354,14 @@ $(function(){
 		}
   	kvad();
 		$('.new-preview-grid-2 .file').each(function(){
+			var filetype = $(this).text();
+			var fileClass = filetype.replace(/[.]/,"");
+			$(this).addClass(fileClass)
+			var fromTop = $(this).parent().find('img').height();
+		
+			$(this).css('top',fromTop+15-45);
+		})
+		$('.new-preview-grid-3 .file').each(function(){
 			var filetype = $(this).text();
 			var fileClass = filetype.replace(/[.]/,"");
 			$(this).addClass(fileClass)
@@ -387,6 +398,9 @@ $(function(){
     }
   });   	
   $(window).resize(function(){
+  	$('.gallery-block .publishing .banner-block img').each(function(){
+			$(this).css('margin-left',$(this).width/2*(-1))
+		})
   	kvad();
   	if($(window).width() > (767-17)){
 	  	$('.slider-nav').css('margin-top',$('.slider-nav').height()/(-1)-5);
@@ -395,10 +409,44 @@ $(function(){
 		}
   	if($(window).width() >767-17){
 			$('.factory-block').nextAll().hide();
+
+	    var maxHeight = 0;
+	    $('.page-preview').each(function(){
+	     $(this).css('height','auto');
+	      if ( $(this).height() > maxHeight ){
+	        maxHeight = $(this).height();
+	      }
+	    });
+	    $('.page-preview').height(maxHeight);    
+
+	    var maxHeight = 0;
+	    $('.new-preview-grid-2').each(function(){
+	     $(this).css('height','auto');
+	      if ( $(this).height() > maxHeight ){
+	        maxHeight = $(this).height();
+	      }
+	    });
+	    $('.new-preview-grid-2').height(maxHeight);
+
+	    var maxHeight = 0;
+	    $('.new-preview-grid-3').each(function(){
+	     $(this).css('height','auto');
+	      if ( $(this).height() > maxHeight ){
+	        maxHeight = $(this).height();
+	      }
+	    });
+	    $('.new-preview-grid-3').height(maxHeight);
 		}else{
 			$('.factory-block').nextAll().show();
+			$('.page-preview').css('height','auto');    
+			$('.new-preview-grid-2').css('height','auto');
+			$('.new-preview-grid-3').css('height','auto');
 		}
   	$('.new-preview-grid-2 .file').each(function(){
+			var fromTop = $(this).parent().find('img').height();			
+			$(this).css('top',fromTop+15-45);
+		})
+		$('.new-preview-grid-3 .file').each(function(){
 			var fromTop = $(this).parent().find('img').height();			
 			$(this).css('top',fromTop+15-45);
 		})
@@ -411,33 +459,6 @@ $(function(){
       }
     });
     $('.detail').height(maxHeight);
-
-    var maxHeight = 0;
-    $('.page-preview').each(function(){
-     $(this).css('height','auto');
-      if ( $(this).height() > maxHeight ){
-        maxHeight = $(this).height();
-      }
-    });
-    $('.page-preview').height(maxHeight);    
-
-    var maxHeight = 0;
-    $('.new-preview-grid-2').each(function(){
-     $(this).css('height','auto');
-      if ( $(this).height() > maxHeight ){
-        maxHeight = $(this).height();
-      }
-    });
-    $('.new-preview-grid-2').height(maxHeight);
-
-    var maxHeight = 0;
-    $('.new-preview-grid-3').each(function(){
-     $(this).css('height','auto');
-      if ( $(this).height() > maxHeight ){
-        maxHeight = $(this).height();
-      }
-    });
-    $('.new-preview-grid-3').height(maxHeight);
 
     $('.sreda-block-wrap img').css('top', ($('.sreda-block-wrap').height() - $('.sreda-block-wrap img').height())/2);
   });
@@ -582,6 +603,14 @@ $(function(){
 	if($('input[type="tel"]').length>0){
 		$('input[type="tel"]').mask("+7 999 999-99-99");		
 	}
+	$('.gallery-block .publishing .banner-block').hover(function(){
+		var imgSrc = $(this).find('img').attr('src').slice(0, -4)+"_hover.png";
+		console.log(imgSrc)
+		$(this).find('img').attr('src',imgSrc)
+	},function(){		
+		var imgSrc = $(this).find('img').attr('src').slice(0, -10)+".png";		
+		$(this).find('img').attr('src',imgSrc)
+	})
 });
 function getName (str){
   if (str.lastIndexOf('\\')){
