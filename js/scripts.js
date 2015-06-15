@@ -7,7 +7,13 @@ $(function(){
 	$( ".toup" ).click(function(){
 		$('html, body').animate({scrollTop: 0}, 1000);
 	})
+	$('.histori-acord .panel-title').click(function(){
+		
+			$('html, body').animate({scrollTop: 0}, 1000);
+		
 
+	});
+	$('select').styler();	
 	// Открытие подменю на моб версии
 	$('.car').click(function(e){
 		var menu = $(this).parent().siblings('.dropdown-menu');
