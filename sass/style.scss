@@ -1210,6 +1210,8 @@ a.fancybox{
 			}
 			.filter-items{
 				.filter-item{
+					text-decoration: none;
+					color: #57565B;
 					margin-bottom: 35px;
 					font-size: 12px;
 					min-height: 415px;
@@ -1265,8 +1267,8 @@ a.fancybox{
 						font-weight: 700;
 						text-decoration: none;
 						text-align: center;
-						padding-top: 6px;
 						margin-top: 10px;
+						border: 0;
 						@include transition(all 300ms);
 						&:hover{
 							background-color: #2A559D;
@@ -1846,8 +1848,11 @@ a.fancybox{
 					margin-bottom: 0;
 				}
 			}
-			&+img{
-				max-width: 100% !important;
+			&+a{
+				display: block;
+				img{
+					max-width: 100% !important;
+				}
 			}
 		}
 		.parametrs{
@@ -2816,13 +2821,7 @@ form{
 			}
 		}
 		input[type="checkbox"]:disabled ~ label{
-			&:before{
-				background:#787878;
-				cursor: default;
-			}
-			&:after{
-				right: 1px;
-			}
+			color: rgba(255,255,255,0.41);	
 		}
 	}
 	// .select-wrap{

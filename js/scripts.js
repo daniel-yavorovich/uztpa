@@ -13,7 +13,12 @@ $(function(){
 		
 
 	});
-	$('select').styler();	
+	if($('select').length>0){
+		$('select').styler();	
+	}
+	// if($('details-block a').find('img').length>0){
+		$('.details-block').next('a').fancybox();
+	// }
 	// Открытие подменю на моб версии
 	$('.car').click(function(e){
 		var menu = $(this).parent().siblings('.dropdown-menu');
@@ -572,7 +577,7 @@ $(function(){
 			var link = $(this).attr('href');
 			var title = $(this).text();
 			var text = $(this).next('p').text();
-	    var content = '<div class="services-popup"><span></span><h5>'+title+'</h5><p>'+text+'</p><a href="'+link+'">Подробнее</a></div>';
+	    var content = '<div class="services-popup"><span></span><h5>'+title+'</h5><p>'+text+'</p></div>';
 	    $(this).next().remove();
 	    $(this).after(content);
 		}
