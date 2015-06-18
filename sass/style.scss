@@ -1885,6 +1885,7 @@ a.fancybox{
 				font-weight: bold;
 				display: inline-block;
 				margin-top: 0;
+				margin-bottom: 25px;
 				&+a{
 					color: #fff;
 					display: inline-block;
@@ -1925,8 +1926,10 @@ a.fancybox{
 				}
 				.new-preview-grid-3,.new-preview-grid-2,.new-preview-block{
 					border-color: transparent;
-					margin-bottom: 0;
+					padding-top: 0;
+					margin-top: 0;
 					padding-bottom: 0;
+					margin-bottom: 20px;
 					&:hover{
 						h5{
 							text-decoration: underline;
@@ -1936,6 +1939,29 @@ a.fancybox{
 						color:#fff;
 						margin-bottom: 3px;
 						margin-top: 0;				
+					}
+					img{
+						margin: 0;
+					}
+				}
+				.new-preview-grid-3{
+					.length,.num{
+						top: 0;
+					}
+					.file{
+						margin-top: -15px;
+					}
+				}
+				.new-preview-grid-2{
+					h5{
+						padding-bottom: 3px;
+						border-bottom: 1px solid #69696c;						
+					}
+					&:last-child{
+						h5{
+							border-bottom: 0;
+						}
+						margin-bottom: 10px;
 					}
 				}
 				.new-preview-block{
@@ -1948,12 +1974,12 @@ a.fancybox{
 						}
 						h5{
 							position: absolute;
-							bottom: 50px;
+							bottom: 35px;
 							left: 35px;
 						}
 						.date{
 							position: absolute;
-							bottom: 30px;
+							bottom: 15px;
 							left: 35px;
 						}
 				}
