@@ -16,9 +16,9 @@ $(function(){
 	if($('select').length>0){
 		$('select').styler();	
 	}
-	// if($('details-block a').find('img').length>0){
+	if($('details-block a').length>0){
 		$('.details-block').next('a').fancybox();
-	// }
+	}
 	// Открытие подменю на моб версии
 	$('.car').click(function(e){
 		var menu = $(this).parent().siblings('.dropdown-menu');
