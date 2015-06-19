@@ -3209,6 +3209,8 @@ footer{
 			height: 44px;
 			background: url(../img/close.png) no-repeat center center;
 			opacity: 0.32;
+			position: relative;
+			z-index: 8050;
 			&:hover{
 				opacity: 0.6;
 			}

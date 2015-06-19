@@ -158,7 +158,7 @@ $(function(){
 			e.preventDefault();
 			var thisUrl = document.location.href.split("/"),
 			link = $(this),
-			page = link.attr('href').slice(1),
+			page = link.attr('href'),
 			thisUrl = thisUrl[thisUrl.length-1],
 			string = '?order_by=-date';
 		
@@ -187,18 +187,18 @@ $(function(){
 				return false;
 			};
 
-			window.history.pushState('', ''+$('title').text(), ''+page);
+			window.history.pushState('', ''+$('title').text(), '?'+page);
 			window.location.reload();
 		}
 	});
 
 	$("#sort").change(function(){
-		if ($('.pagination').length > 0) {
+		// if ($('.pagination').length > 0) {
 			var order_by = $(this).val(),
 			string = '?order_by=' + order_by;
 			window.history.pushState('', ''+$('title').text(), ''+string);
 			window.location.reload();
-		};
+		// };
 	});
 
 	// квадрат партнер
@@ -262,23 +262,32 @@ $(function(){
 	},function(){
 		$(this).attr('data-hov','diss');
 	})
+	$($('.sm-section').get().reverse()).each(function(){
+		var sId = $(this).attr('id');
+		$('footer').after("<a href='#"+sId+"p' class='section-link' rel='section-rgoup'></a>")
+	})
+	$('a.section-link').fancybox({
+		closeBtn:false
+	});
 	$('.sm-section').click(function(){
 		var sId = $(this).attr('id');
-		$.fancybox.open([
-			{
-				href: '#'+sId+'p',
-				padding:0,
-				closeBtn:false,
-				maxWidth:486,
-				helpers : {
-	        overlay : {
-	          css : {
-	            'background' : 'rgba(27, 54, 100, 0.8)'
-		        }
-			    }
-		    }
-			}
-		])
+		// console.log('#'+sId+'p')
+		$('a[href="#'+sId+'p"]').click();
+		// $.fancybox.open([
+		// 	{
+		// 		href: '#'+sId+'p',
+		// 		padding:0,
+		// 		closeBtn:false,
+		// 		maxWidth:486,
+		// 		helpers : {
+	 //        overlay : {
+	 //          css : {
+	 //            'background' : 'rgba(27, 54, 100, 0.8)'
+		//         }
+		// 	    }
+		//     }
+		// 	}
+		// ])
 	})
 	$('.popup-close, .fancybox-close').click(function(){
 		$.fancybox.close()
