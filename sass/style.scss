@@ -586,7 +586,8 @@ header{
 			overflow: hidden;
 			border: 5px solid #fff;
 			margin-bottom: 27px;
-			background:url(../img/sh-aquarius-bg.jpg) no-repeat center;
+			background: no-repeat center;
+			background-image: url(../img/sh-aquarius-bg.jpg);
 			background-size: cover;
 			padding: 28px 18px;
 			.radio{
@@ -775,6 +776,25 @@ header{
 		.jq-selectbox.jqselect.dropdown.opened>.jq-selectbox__select{
 			background:#fff;
 			border-radius: 5px 5px 0 0;
+		}
+		&.orange{
+			.shema{
+				background-image: url(../img/sh-neon-bg.jpg);
+				.radio{
+					input[type="radio"]:checked ~ label{
+						background:#ff5f00;
+					}
+				}
+				.shema-content{
+					.text{
+						.param{
+							p{
+								color: #cab055;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
