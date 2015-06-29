@@ -16,9 +16,9 @@ $(function(){
 	if($('select').length>0){
 		$('select').styler();	
 	}
-	if($('details-block a').length>0){
-		$('.details-block').next('a').fancybox();
-	}
+	// if($('.details-block a').find('img').length>0){
+		$('.details-block a').fancybox();
+	// }
 	// Открытие подменю на моб версии
 	$('.car').click(function(e){
 		var menu = $(this).parent().siblings('.dropdown-menu');
@@ -158,7 +158,7 @@ $(function(){
 			e.preventDefault();
 			var thisUrl = document.location.href.split("/"),
 			link = $(this),
-			page = link.attr('href'),
+			page = link.attr('href').slice(1),
 			thisUrl = thisUrl[thisUrl.length-1],
 			string = '?order_by=-date';
 		
@@ -187,29 +187,30 @@ $(function(){
 				return false;
 			};
 
-			window.history.pushState('', ''+$('title').text(), '?'+page);
+			window.history.pushState('', ''+$('title').text(), ''+page);
 			window.location.reload();
 		}
 	});
 
 	$("#sort").change(function(){
-		// if ($('.pagination').length > 0) {
+		if ($('.pagination').length > 0) {
 			var order_by = $(this).val(),
 			string = '?order_by=' + order_by;
 			window.history.pushState('', ''+$('title').text(), ''+string);
 			window.location.reload();
-		// };
+		};
 	});
 
 	// квадрат партнер
 	function kvad (){
 		$('.owl-carousel').trigger('update.owl.carousel');
-		$('owl-item').each(function(){
-			$(this).find('.partner-img-wrap').height($(this).width()).width($(this).width());
-		});
+		// $('.owl-item').find('.partner-img-wrap').each(function(){
+		// 	$(this).css('height',400);
+		// 	console.log($(this).outerWidth())
+		// });
 		$('.partner-img-wrap').each(function(){
 			// $(this).width($(this).parent().width())
-			$(this).height($(this).outerWidth());
+			$(this).height($(this).width());
 			$(this).find('img').css('margin-top',($(this).height()-$(this).find('img').height())/2)
 		});
 		$('.service-img-wrap').width($('.service-block').width());
@@ -632,6 +633,35 @@ $(function(){
 		var imgSrc = $(this).find('img').attr('src').slice(0, -10)+".png";		
 		$(this).find('img').attr('src',imgSrc)
 	})
+
+
+	//схема
+	$('.shema-content img').each(function(){
+		var marTop = ($(this).parent().outerHeight()-$(this).outerHeight())/2
+		$(this).css({
+			'margin-top':marTop
+		})
+	})
+
+	var allShema = $('.shema-content').length;
+	$('.shema-content').hide();
+	$('.shema-content').eq(0).show();
+	for(var i=0;i < allShema;i++){
+		$('.shema-content').eq(i).attr('data-num',i)
+		$('.shema .radio>input').eq(i).attr('data-num',i)
+	}
+	$('.shema .radio>input').click(function(){
+		// $('.shema-content').hide();
+		var num = $(this).attr('data-num');
+		$('.shema-content').each(function(){
+			$(this).hide();
+			if($(this).attr('data-num') == num){
+				$(this).fadeIn();
+				console.log($(this).attr('data-num'))
+			}
+		})
+	})
+
 });
 function getName (str){
   if (str.lastIndexOf('\\')){

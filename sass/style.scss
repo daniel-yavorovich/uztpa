@@ -494,11 +494,16 @@ header{
 	}
 	p{
 		color: #fff;
-	}
-	h4{
+	} 
+	h5{
 		margin-top: -40px;
 		color: #fff;
-		margin-bottom: 160px;
+		margin-bottom: 160px; 
+	}
+	h4{
+		// margin-top: -40px;
+		color: #fff;
+		// margin-bottom: 160px;
 	}
 	.item-info{
 		background: rgba(4,35,89,0.77);
@@ -567,7 +572,7 @@ header{
 			text-decoration: none;
 		}
 	}
-	.parametrs-aqua{
+	.shema-parametrs{
 		padding-bottom: 10px;
 		.row:last-child{
 			margin-bottom: 0;
@@ -577,7 +582,96 @@ header{
 		.radio+.radio, .checkbox+.checkbox{
 			margin-top: 10px;
 		}
-		.radio{
+		.shema{
+			overflow: hidden;
+			border: 5px solid #fff;
+			margin-bottom: 27px;
+			background:url(../img/sh-aquarius-bg.jpg) no-repeat center;
+			background-size: cover;
+			padding: 28px 18px;
+			.radio{
+				padding-left: 10px;
+				padding-right: 10px;
+				input{
+					display: none;
+				}
+				label{					
+					@include transition(background 0.3s ease);
+					text-align: center;
+					background:#fff;
+					border: 1px solid rgba(31,60,110,0.3);
+					border-radius: 6px;
+					color: #4f4f4f;
+					padding: 3px 10px;
+					&:hover{
+						background:#e4e4e4;
+					}
+				}
+				input[type="radio"]:checked ~ label{
+					background:#106da0;
+					color: #fff;
+				}
+			}
+			.shema-content{
+				margin-left: 4.66667%;	
+				>.row{
+					margin-left: 0;
+					margin-right: 0;
+				}
+				border-radius: 118px;
+				margin-top: 45px;
+				padding: 25px;
+				background:rgba(46,46,46,0.9);
+				.img{
+					height: 186px;
+					width: 186px;
+					border-radius: 50%;
+					background:#fff;
+					img{
+						margin-right: -20px;
+						// max-width: 100%;
+					}
+				}
+				.text{
+					overflow: hidden;
+					h5{
+						margin-top: 0;
+						margin-bottom: 30px;
+					}
+					.param{
+						width: 50%;
+						float: left;
+						margin-bottom: 15px;
+						p{
+							color: #89d1f9;
+						}
+					}
+					.value{
+						width: 50%;
+						float: left;
+						margin-bottom: 15px;
+					}
+					p{
+						line-height: 20px;
+						margin-bottom: 0;
+					}
+					a{
+						@include transition(background 0.3s ease);
+						float: left;
+						margin-top: 10px;		
+						text-decoration: none;
+						font-weight: bold;
+						padding: 5px 30px;
+						background:#fff;
+						color: #000;
+						&:hover{
+							background:#eee;
+						}
+					}
+				}
+			}
+		}
+		.radio.square-check{
 			label{
 				border: 1px solid #d5d5d5;
 				height: 54px;
@@ -590,18 +684,42 @@ header{
 				width: 1%;
 				padding: 7px 38px;
 				position: relative;
+				&:hover{
+					background:#F2F6F7;
+				}
+			}
+			input[type="radio"]:checked ~ label{
+				background:#ecf0f1;
 			}
 		}
-		.checkbox{
+		.checkbox.figure-check{
+			max-width: 250px;
 			label{
 				font-size: 12px;
+				&:hover{
+					&:before{
+						background:#CDCDCD;
+					}
+				}
+			}
+			input[type="checkbox"]:disabled ~ label{
+				&:hover{
+					&:before{
+						background:#b5b5b5;
+					}
+				}
 			}
 		}
 		.select-wrap{
 			margin-top: 10px;
 			margin-bottom: 10px;
 			text-align: right;
+			font-size: 0;
 			p{
+				line-height: 24px;
+				vertical-align: middle;
+				padding-bottom: 2px;
+				font-size: 12px;
 				display: inline-block;
 				margin-bottom: 0;
 				padding-right: 5px;
@@ -611,7 +729,7 @@ header{
 		.jq-selectbox{
 			text-align: left;
 			display: inline-block;
-			width: 60px;
+			width: 55px;
 			&:hover .jq-selectbox__select{
 				background:#e4e4e4;
 			}
@@ -619,13 +737,13 @@ header{
 		.jq-selectbox .jq-selectbox__select{
 			border: 1px solid #d0d6e0;
 			@include transition(none);
-			padding-left: 10px;
-			padding-right: 20px;
+			padding-left: 5px;
+			padding-right: 15px;
 			border-radius:5px;
 			background:#fff;
 			color: #555555;
 			font-size: 12px;
-			width: 60px;
+			width: 55px;
 		}
 		.jq-selectbox .jq-selectbox__select .jq-selectbox__select-text{
 			line-height: 24px;
@@ -633,17 +751,18 @@ header{
 		.jq-selectbox .jq-selectbox__dropdown{
 			border: 1px solid #d0d6e0;
 			top: 24px;
-			width: 60px;			
+			width: 55px;			
 			border-radius: 0 0 5px 5px;
 		}
 		.jq-selectbox .jq-selectbox__dropdown li{
-			padding: 0 5px 0 10px!important;
+			font-size: 12px;
+			padding: 0 5px 0 5px!important;
 		}
 		.jq-selectbox .jq-selectbox__dropdown li:last-child{
 			border-radius: 0 0 5px 5px;
 		}
 		.jq-selectbox .jq-selectbox__select .jq-selectbox__trigger{
-			width: 20px;
+			width: 15px;
 		}
 		.jq-selectbox .jq-selectbox__select .jq-selectbox__trigger .jq-selectbox__trigger-arrow{
 			@include sprite-sprite(sel-little);
@@ -726,24 +845,11 @@ a.fancybox{
 			text-decoration: none !important;
 			position: relative;
 			@include transition(all 300ms);
-			&:before{
-				position: absolute;
-				content:'';
-				height:4px;
-				width:4px;
-				background:#1b3766;
-				left: 19px;
-				top: 50%;
-				margin-top: -2px;						
-			}
 		}
 		&:hover a, &.active a{
 			color:#fff;
 			background: #1b3766;
-		}
-		&:hover a:before, &.active a:before{
-			background:#fff;
-		}				
+		}		
 	}
 }
 
@@ -1250,8 +1356,10 @@ a.fancybox{
 						
 					}
 					.filter-img-wrap{
+						@include transition(background 0.3s ease);
 						border: 1px solid #d5d5d5;
 						margin-bottom: 10px;
+
 					}
 					img{
 						margin: 10px auto;
@@ -1272,6 +1380,11 @@ a.fancybox{
 						@include transition(all 300ms);
 						&:hover{
 							background-color: #2A559D;
+						}
+					}
+					&:hover{
+						.filter-img-wrap{
+							background:#eee;
 						}
 					}
 				}
@@ -1968,20 +2081,20 @@ a.fancybox{
 					border-color: transparent !important;
 					max-width: 500px;
 					display: block;
-						img{
-							max-width: 500px !important;
-							width: 100%;
-						}
-						h5{
-							position: absolute;
-							bottom: 35px;
-							left: 35px;
-						}
-						.date{
-							position: absolute;
-							bottom: 15px;
-							left: 35px;
-						}
+					img{
+						max-width: 500px !important;
+						width: 100%;
+					}
+					h5{
+						position: absolute;
+						bottom: 35px;
+						left: 35px;
+					}
+					.date{
+						position: absolute;
+						bottom: 15px;
+						left: 35px;
+					}
 				}
 				.banner-block{
 						.banner-wrap{
@@ -2059,6 +2172,11 @@ a.fancybox{
 						display: inline-block;
 						@include big-blue-btn();
 						margin-top: 25px;
+					}
+				}
+				&:hover{
+					h5{
+						text-decoration: underline;
 					}
 				}
 			}
@@ -2795,7 +2913,6 @@ form{
 			display: none;
 		}
 		input[type="radio"]:checked ~ label{
-			background:#ecf0f1;
 			&:after{
 				opacity: 1;
 			}
@@ -2838,9 +2955,9 @@ form{
 		input{
 			display: none;
 		}
-		input[type="checkbox"]:checked ~ label{
+		input[type="checkbox"]:checked ~ label:hover,input[type="checkbox"]:checked ~ label{
 			&:before{
-				background:#1f8e37 url(../img/galka.png) no-repeat 7px 2px;
+				background:#1f8e37 url(../img/galka.png) no-repeat 7px 2px !important;
 			}
 			&:after{
 				right: 1px;
@@ -3052,7 +3169,7 @@ form{
 			.jq-selectbox__trigger-arrow{
 				border:0;
 				opacity: 1;
-				height: 17px;
+				height: 16px;
 				width: 9px;
 				top: 50%;
 				margin-top: -8px;
@@ -3185,6 +3302,7 @@ footer{
 	font-family: $verdana;
 	border-radius: 5px;
 	position: relative;
+	overflow: hidden;
 	.title{
 		border-radius: 5px 5px 0 0 ;
 		background:#fff;
@@ -3218,18 +3336,24 @@ footer{
 	}
 	.body{
 		padding: 20px 15px;
-		overflow: hidden;
 		img{
 			float: left;
 			max-width: 50%;
 			padding-right: 15px;
+			margin-right: 15px;
+			margin-bottom: 15px;
+			&+p{
+				margin-top: -5px;				
+			}
 		}
 		p{
-			margin-bottom: 0;
+			margin-bottom: 5px;
 			color: #535353;
 			line-height: 20px;
-			margin-top: -5px;
 		}
+		ul{
+			padding-left: 25px;
+		}	
 	}
 	.factory-nav{
 		position: absolute;
@@ -3443,6 +3567,47 @@ video{
 .fancybox-overlay{
 	background: rgba(13,28,52,.9);
 }
+.fancybox-nav{
+	width:  18px;
+	span{
+		visibility: visible;
+		width: 9px;
+		height: 14px;
+		margin-top: -7px;
+	}
+	&.fancybox-prev{
+		left: -18px;
+		span{
+			@include sprite-sprite(pag-prev);				
+			left: 0;
+		}
+		// &:hover{
+		// 	span{
+		// 		opacity: 0.7;
+		// 		@include sprite-sprite(pag-prev);	
+		// 		&:hover{
+		// 			@include sprite-sprite(pag-prev);
+		// 		}
+		// 	}
+		// }
+	}
+	&.fancybox-next{
+		right: -18px;
+		span{
+			right: 0;
+			@include sprite-sprite(pag-next);
+		}
+		// &:hover{
+		// 	span{
+		// 		opacity: 0.7;
+		// 		@include sprite-sprite(pag-next);
+		// 		&:hover{
+		// 			@include sprite-sprite(pag-next);
+		// 		}
+		// 	}
+		// }
+	}
+}
 @media (min-width: 1200px){
 	.container {
 		width: 970px;
@@ -3549,6 +3714,11 @@ video{
 	}
 	.banner-block h4{
 		font-size: 15px;
+	}
+}
+@media(min-width: 992px){
+	.billboard .shema-parametrs .shema .shema-content{
+		margin-left: 12.5%;
 	}
 }
 @media (max-width: 767px){
@@ -3852,6 +4022,24 @@ video{
 	}
 	.main-content .content-block.gallery-block .publishing .banner-block{
 		float: none;
+	}
+	.billboard .shema-parametrs .shema .shema-content{
+		margin-left: 0;
+	}
+	.billboard .shema-parametrs .shema .shema-content .img{
+		margin: 0 auto 15px;
+	}
+	.billboard .shema-parametrs .shema .shema-content .text{
+		max-width: 420px;
+		margin: auto;
+	}
+	.billboard .shema-parametrs .checkbox.figure-check{
+		margin: 10px;
+		display: inline-block;
+	}
+	.billboard .shema-parametrs .select-wrap{
+		margin: 10px;
+		display: inline-block;		
 	}
 }
 
