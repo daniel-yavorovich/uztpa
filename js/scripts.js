@@ -16,9 +16,7 @@ $(function(){
 	if($('select').length>0){
 		$('select').styler();	
 	}
-	// if($('.details-block a').find('img').length>0){
-		$('.details-block a').fancybox();
-	// }
+	
 	// Открытие подменю на моб версии
 	$('.car').click(function(e){
 		var menu = $(this).parent().siblings('.dropdown-menu');
@@ -642,6 +640,10 @@ $(function(){
 			'margin-top':marTop
 		})
 	})
+
+	// if($('.details-block a').find('img').length>0){
+		$('.details-block a').fancybox();
+	// }
 
 	var allShema = $('.shema-content').length;
 	$('.shema-content').hide();
