@@ -220,7 +220,7 @@ header{
 	background-size: cover;
 }
 .billboard{
-	@include transition(background 1s ease);
+	// @include transition(background 1s ease);
 	min-height: 290px;
 	position: relative;
 	&.only-menu{
@@ -498,7 +498,7 @@ header{
 	h5{
 		margin-top: -40px;
 		color: #fff;
-		margin-bottom: 160px; 
+		// margin-bottom: 160px; 
 	}
 	h4{
 		// margin-top: -40px;
@@ -945,11 +945,13 @@ a.fancybox{
 	}
 	.object-preview{
 			height: 564px;
-			background:url(../img/object-pre.jpg) no-repeat center center;
-			padding: 247px 15px;
+			float: left;
+			width: 100%;
 			margin-bottom: 20px;
 			.object-prev-in{
 				text-align: center;
+				padding: 247px 0;
+				background:url(../img/object-pre.jpg) no-repeat center center;
 				a{
 					@include blue-btn();
 					display: inline-block;
@@ -1552,6 +1554,9 @@ a.fancybox{
 				// 	padding-right: 0px;
 				// }
 				margin-bottom: 30px;
+				max-width: 485px;
+				margin-left: auto;
+				margin-right: auto;
 				.service-block{ 
 					padding: 15px 20px;
 					background-color: #FFF;
@@ -1980,11 +1985,12 @@ a.fancybox{
 					color: #243b64;
 					margin-bottom: 0;
 				}
-			}
-			&+a{
-				display: block;
-				img{
-					max-width: 100% !important;
+				&+a{
+					display: block;
+					img{
+						width: 100% !important;
+						max-width: 90% !important;
+					}
 				}
 			}
 		}
@@ -2075,11 +2081,13 @@ a.fancybox{
 					}
 					img{
 						margin: 0;
+						margin-top: 10px;
+						margin-bottom: 10px;
 					}
 				}
 				.new-preview-grid-3{
 					.length,.num{
-						top: 0;
+						top: 10px;
 					}
 					.file{
 						margin-top: -15px;
@@ -2122,11 +2130,21 @@ a.fancybox{
 							min-height: 222px;
 							background:#334f81;
 							width: 100%;
-							img{
-								position:absolute;
-								width: auto;
-								left:41%;
-								top: 50px;
+							.banner-img-wrap{
+								position: absolute;
+								width: 100px;
+								height: 100px;
+								top: 20px;
+								left: 50%;
+								margin-left: -50px;
+								img{
+									position:absolute;
+									margin: auto;
+									left: 0;
+									right: 0;
+									bottom: 0;
+									width: auto;
+								}								
 							}
 							h4{
 								left:50%;
@@ -2155,7 +2173,8 @@ a.fancybox{
 	.publishing{
 			margin-left: -20px;
 			margin-right: -20px;
-			.new-preview-block{
+			.new-preview-block{				
+				display: block;
 				padding: 0 20px;
 				margin: 8px 0 10px;
 				text-decoration: none;
@@ -3743,7 +3762,9 @@ video{
 }
 @media (max-width: 767px){
 	.wrapper.gradient-bg{
-		min-height: 1px;
+		.billboard{
+			min-height: 1px;
+		}
 	}
 	header{
 		padding-top: 15px;
@@ -3817,8 +3838,8 @@ video{
 		}
 	}
 	.banner-block{
-		// float: left;
-		// width: 50%;
+		float: left;
+		width: 50%;
 	}
 	.billboard .item-info .feature p:last-child{
 		padding-left: 0;	
@@ -3942,7 +3963,6 @@ video{
 		}
 	}
 	.main-content .content-block .publishing{
-		text-align: center;
 		.new-preview-block{
 			text-align: left;
 		}
@@ -3955,9 +3975,8 @@ video{
 			}
 		}
 		.new-preview-grid-2{
-			max-width: 330px;
-			display: inline-block;
-			text-align: left;
+			width: 50%;
+			float: left;
 			img{
 				max-width: 100%;
 			}
@@ -4036,12 +4055,9 @@ video{
 	}
 	.main-content .content-block.gallery-block .publishing .new-preview-grid-3{
 		display:block;
-		max-width: 350px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.main-content .content-block.gallery-block .publishing .banner-block{
-		float: none;
+		max-width: 100%;
+		width: 50%;
+		float: left;
 	}
 	.billboard .shema-parametrs .shema .shema-content{
 		margin-left: 0;
@@ -4120,16 +4136,9 @@ video{
 			padding-right: 10px;
 		}
 	}
-	
 }
 @media (max-width: 440px){
-	.banner-block{
-		float: none !important;
-		width: 100% !important;
-		max-width: 212.5px;
-		margin-left: auto;
-		margin-right: auto;
-	}
+	
 	.billboard{
 		&.nonormalh{
 			h1{
@@ -4149,8 +4158,34 @@ video{
 	// 		}
 	// 	 }
 	// }
+	.billboard .item-info .feature p{
+		font-size: 13px;
+	}
+	.main-content .content-block.gallery-block .publishing .new-preview-grid-3,
+	.main-content .content-block .publishing .new-preview-grid-2,
+	.main-content .publishing .new-preview-grid-3{
+		max-width: 400px;
+		width: 100%;
+		float: none;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.main-content .publishing .new-preview-grid-3{
+		max-width: 400px;
+		width: 100%;
+		float: none;
+		margin-right: auto;
+		margin-left: auto;
+	}
 }
 @media (max-width: 400px){
+	.banner-block{
+		float: none !important;
+		width: 100% !important;
+		max-width: 212.5px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	.main-content .content-block ul.pagination,.main-content .content-block ul.pagination{
 		li{
 			margin: 3px 0;
@@ -4185,3 +4220,4 @@ video{
 	
 	
 }
+

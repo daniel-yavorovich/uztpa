@@ -202,18 +202,12 @@ $(function(){
 	// квадрат партнер
 	function kvad (){
 		$('.owl-carousel').trigger('update.owl.carousel');
-		// $('.owl-item').find('.partner-img-wrap').each(function(){
-		// 	$(this).css('height',400);
-		// 	console.log($(this).outerWidth())
-		// });
 		$('.partner-img-wrap').each(function(){
-			// $(this).width($(this).parent().width())
-			$(this).height($(this).width());
+			$(this).height(0);
+			$(this).height($(this).parent().width())
 			$(this).find('img').css('margin-top',($(this).height()-$(this).find('img').height())/2)
 		});
 		$('.service-img-wrap').width($('.service-block').width());
-
-
 	}
 
 	$('#accordion').on('shown.bs.collapse', function () {
@@ -345,7 +339,7 @@ $(function(){
 			$(this).height($(this).siblings('.dost-block-content').height());
 		});
 		
-		kvad();
+		// kvad();
 	})
 		//галереи
 
