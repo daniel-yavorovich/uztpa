@@ -610,7 +610,6 @@ $(function(){
 	if($("#time-range").length>0){
 		$("#time-range").ionRangeSlider({
 	    grid: true,
-	    from: 5,
 	    values: ["Утро","Обед", "Вечер", "Сейчас"],
 	    hide_min_max: true,
     	hide_from_to: true

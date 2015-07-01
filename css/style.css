@@ -1659,7 +1659,7 @@ a.fancybox:hover:after {
 .main-content .content-block .cont-wrap .owl-carousel .owl-nav .owl-prev:before {
   background-position: 0 -638px;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .main-content .content-block .cont-wrap .owl-carousel .owl-nav .owl-prev:before:hover, .main-content .content-block .cont-wrap .owl-carousel .owl-nav .owl-prev:before.pag-prev-hover {
   background-position: 0 -624px;
 }
@@ -1676,7 +1676,7 @@ a.fancybox:hover:after {
 .main-content .content-block .cont-wrap .owl-carousel .owl-nav .owl-next:before {
   background-position: 0 -610px;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .main-content .content-block .cont-wrap .owl-carousel .owl-nav .owl-next:before:hover, .main-content .content-block .cont-wrap .owl-carousel .owl-nav .owl-next:before.pag-next-hover {
   background-position: 0 -596px;
 }
@@ -2201,7 +2201,7 @@ a.fancybox:hover:after {
   top: 0;
   background-position: 0 -638px;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .main-content .content-block ul.pagination li:first-child a:before:hover, .main-content .content-block ul.pagination li:first-child a:before.pag-prev-hover, .main-content .content-block ul.pagination li:first-child span:before:hover, .main-content .content-block ul.pagination li:first-child span:before.pag-prev-hover {
   background-position: 0 -624px;
 }
@@ -2222,7 +2222,7 @@ a.fancybox:hover:after {
   top: 0;
   background-position: 0 -610px;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .main-content .content-block ul.pagination li:last-child a:before:hover, .main-content .content-block ul.pagination li:last-child a:before.pag-next-hover, .main-content .content-block ul.pagination li:last-child span:before:hover, .main-content .content-block ul.pagination li:last-child span:before.pag-next-hover {
   background-position: 0 -596px;
 }
@@ -2651,7 +2651,7 @@ a.fancybox:hover:after {
   background-position: 0 -160px;
   color: #fff;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .main-content .publishing .new-preview-grid-3 .file.cam:hover, .main-content .publishing .new-preview-grid-3 .file.cam.file-cam-hover {
   background-position: 0 -199px;
 }
@@ -2660,7 +2660,7 @@ a.fancybox:hover:after {
   background-position: 0 -260px;
   color: #fff;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .main-content .publishing .new-preview-grid-3 .file.movie:hover, .main-content .publishing .new-preview-grid-3 .file.movie.file-video-hover {
   background-position: 0 -299px;
 }
@@ -2746,7 +2746,7 @@ a.fancybox:hover:after {
   background-position: 0 -160px;
   color: #fff;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .main-content .publishing .new-preview-grid-2 .file.cam:hover, .main-content .publishing .new-preview-grid-2 .file.cam.file-cam-hover {
   background-position: 0 -199px;
 }
@@ -2755,7 +2755,7 @@ a.fancybox:hover:after {
   background-position: 0 -260px;
   color: #fff;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .main-content .publishing .new-preview-grid-2 .file.movie:hover, .main-content .publishing .new-preview-grid-2 .file.movie.file-video-hover {
   background-position: 0 -299px;
 }
@@ -3963,7 +3963,7 @@ footer .footer-logo img {
   background-position: 0 -638px;
   left: -20px;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .popup.object .factory-nav.prev:hover, .popup.object .factory-nav.prev.pag-prev-hover {
   background-position: 0 -624px;
 }
@@ -3972,7 +3972,7 @@ footer .footer-logo img {
   background-position: 0 -610px;
   right: -20px;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .popup.object .factory-nav.next:hover, .popup.object .factory-nav.next.pag-next-hover {
   background-position: 0 -596px;
 }
@@ -4239,7 +4239,7 @@ video {
   background-position: 0 -638px;
   left: 0;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .fancybox-nav.fancybox-prev span:hover, .fancybox-nav.fancybox-prev span.pag-prev-hover {
   background-position: 0 -624px;
 }
@@ -4252,7 +4252,7 @@ video {
   right: 0;
   background-position: 0 -610px;
 }
-/* line 59, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 59, c:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .fancybox-nav.fancybox-next span:hover, .fancybox-nav.fancybox-next span.pag-next-hover {
   background-position: 0 -596px;
 }
