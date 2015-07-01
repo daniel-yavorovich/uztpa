@@ -624,14 +624,7 @@ header{
 				padding: 25px;
 				background:rgba(46,46,46,0.9);
 				.img{
-					height: 186px;
-					width: 186px;
-					border-radius: 50%;
-					background:#fff;
-					img{
-						margin-right: -20px;
-						// max-width: 100%;
-					}
+					padding-left: 0;
 				}
 				.text{
 					overflow: hidden;
@@ -694,7 +687,7 @@ header{
 			}
 		}
 		.checkbox.figure-check{
-			max-width: 250px;
+			// max-width: 250px;
 			label{
 				font-size: 12px;
 				&:hover{
@@ -715,6 +708,9 @@ header{
 			margin-top: 10px;
 			margin-bottom: 10px;
 			text-align: right;
+			@media(max-width: 991px){
+				text-align: left;
+			}
 			font-size: 0;
 			p{
 				line-height: 24px;
@@ -725,6 +721,9 @@ header{
 				margin-bottom: 0;
 				padding-right: 5px;
 				padding-left: 5px;
+				&:first-child{
+					padding-left: 0;
+				}
 			}
 		}
 		.jq-selectbox{
@@ -1343,6 +1342,7 @@ a.fancybox{
 					margin-bottom: 35px;
 					font-size: 12px;
 					min-height: 415px;
+					display: block;
 					h5{
 						font-size: 12px;
 						margin-bottom: 0;
@@ -2090,7 +2090,7 @@ a.fancybox{
 						top: 10px;
 					}
 					.file{
-						margin-top: -15px;
+						margin-top: -10px;
 					}
 				}
 				.new-preview-grid-2{
@@ -2103,6 +2103,9 @@ a.fancybox{
 							border-bottom: 0;
 						}
 						margin-bottom: 10px;
+					}
+					.file{
+						margin-top: -10px;
 					}
 				}
 				.new-preview-block{
@@ -2415,7 +2418,7 @@ a.fancybox{
 				}
 				img{
 					width: 100%;
-					margin: 3px 0;
+					margin: 10px 0;
 					max-width: 100%;
 				}
 				video{
@@ -3867,6 +3870,8 @@ video{
 				padding-left: 15px;
 			}
 			&.left-sidebar{
+				padding-top: 0;
+				padding-bottom: 0;	
 				&:after{
 					display: none;
 				}
@@ -4070,12 +4075,21 @@ video{
 		margin: auto;
 	}
 	.billboard .shema-parametrs .checkbox.figure-check{
+		// min-width: 240px;
+		display: inline-block;
+		text-align: left;
+	}
+	.billboard .shema-parametrs{
+		text-align: center;
+	}
+	.billboard .shema-parametrs .col-sm-6{
 		margin: 10px;
+		min-width: 240px;
+		text-align: left;
 		display: inline-block;
 	}
-	.billboard .shema-parametrs .select-wrap{
-		margin: 10px;
-		display: inline-block;		
+	.shema-wrap{
+		display: none;
 	}
 }
 
@@ -4135,6 +4149,24 @@ video{
 			padding-left: 10px;
 			padding-right: 10px;
 		}
+	}
+}
+@media(max-width: 500px){
+	.shema-parametrs .col-xs-6{
+		width: 100% !important;
+	}
+	.shema-parametrs .col-sm-12 .col-xs-6{
+		max-width: 240px;
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+	}
+	.shema-parametrs .col-sm-12 .col-xs-6 label{
+		display: block;
+		max-width: 150px;
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
 	}
 }
 @media (max-width: 440px){
