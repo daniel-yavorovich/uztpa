@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AQUARIUS</title>
+	<title>NEON</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/jquery.fancybox.css">
 	<link rel="stylesheet" href="css/ion.rangeSlider.css">
@@ -125,19 +125,19 @@
 							<div class="col-sm-12 shema-wrap">
 								<div class="shema">								
 									<div class="col-sm-3 radio">
-										<input type="radio" name="tap-type0" id="tap-type0-1" value="type1" checked>
+										<input type="radio" id="tap-type0-1" checked>
 									  <label for="tap-type0-1"><strong>Редуцированный</strong> с плавающей пробкой</label>
 									</div>
 									<div class="col-sm-3 radio">
-										<input type="radio" name="tap-type0" id="tap-type0-2" value="type2">
+										<input type="radio" id="tap-type0-2">
 									  <label for="tap-type0-2"><strong>Редуцированный</strong> с пробкой в опорах</label>
 									</div>
 									<div class="col-sm-3 radio">
-										<input type="radio" name="tap-type0" id="tap-type0-3" value="type3">
+										<input type="radio" id="tap-type0-3">
 									  <label for="tap-type0-3"><strong>Полнопроходный</strong> с плавающей пробкой</label>
 									</div>
 									<div class="col-sm-3 radio">
-										<input type="radio" name="tap-type0" id="tap-type0-4" value="type4">
+										<input type="radio" id="tap-type0-4">
 									  <label for="tap-type0-4"><strong>Полнопроходный</strong> с пробкой в опорах</label>
 									</div>								
 									<div class="col-sm-11 col-md-9 shema-content">
@@ -234,67 +234,61 @@
 									</div>	
 								</div>
 							</div>
-						  <div class="col-xs-6 radio square-check">
-				        <input type="radio" name="tap-type1" id="tap-type1-1" value="type1" checked>
-							  <label for="tap-type1-1">Полнопроходные шаровые краны</label>				        
+							<div class="col-xs-6 radio square-check">
+								<input type="radio" name="kran-type" id="tap-type1-1" value="Полн. краны" checked>
+								<label for="tap-type1-1">Полнопроходные шаровые краны</label>				        
 							</div>
 							<div class="col-xs-6 radio square-check">
-				        <input type="radio" name="tap-type1" id="tap-type1-2" value="type2">
-							  <label for="tap-type1-2">Стандартнопроходные шаровые краны</label>
+								<input type="radio" name="kran-type" id="tap-type1-2" value="Станд. краны">
+								<label for="tap-type1-2">Стандартнопроходные шаровые краны</label>
 							</div>
 							<div class="col-sm-12">
 								<div class="row">
 									<div class="col-xs-6 col-md-3 checkbox figure-check">
-									  <input type="checkbox" name="tap-type2" id="tap-type2-1" value="">
+									  <input type="checkbox" name="kran-type-pr" id="tap-type2-1" value="Приварные" checked>
 									  <label for="tap-type2-1">Приварные</label>
 									</div>
 									<div class="col-xs-6 col-md-3 checkbox figure-check">
-									  <input type="checkbox" name="tap-type2" id="tap-type2-2" value="" disabled>
+									  <input type="checkbox" name="kran-type-fl" id="tap-type2-2" value="Фланцевые" checked>
 									  <label for="tap-type2-2">Фланцевые</label>
 									</div>
 									<div class="col-xs-6 col-md-3 checkbox figure-check">
-									  <input type="checkbox" name="tap-type2" id="tap-type2-3" value="">
+									  <input type="checkbox" name="kran-type-el" id="tap-type2-3" value="Электропривод" checked>
 									  <label for="tap-type2-3">Электропривод</label>
 									</div>
 									<div class="col-xs-6 col-md-3">
 										<div class="select-wrap">
 											<p>Диаметр  от</p>
-											<select name="d-from" id="d-from" size="3">
+											<select name="d-from" id="d-min" size="3">
 												<option value="15" selected="selected">15</option>
 												<option value="20">20</option>
+												<option value="25">25</option>
 												<option value="30">30</option>
-												<option value="30">30</option>
-												<option value="30">1230</option>
-												<option value="30">30</option>
-												<option value="30">30</option>
-												<option value="30">30</option>
-												<option value="30">30</option>
-												<option value="30">30</option>
-												<option value="30">30</option>
-												<option value="30">30</option>
+												<option value="35">35</option>
+												<option value="40">40</option>
+												<option value="45">45</option>
+												<option value="50">50</option>
+												<option value="55">55</option>
+												<option value="60">60</option>
+												<option value="65">65</option>
+												<option value="70">70</option>
 											</select>
 											<p>до</p>
-											<select name="d-to" id="d-to" size="3">
-												<option value="15" selected="selected">15</option>
+											<select name="d-to" id="d-max" size="3">
+												<option value="15">15</option>
 												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">20</option>
-												<option value="20">1200</option>
-												<option value="30" disabled="disabled">30</option>
+												<option value="25">25</option>
+												<option value="30">30</option>
+												<option value="35">35</option>
+												<option value="40" disabled="disabled">40</option>
+												<option value="45">45</option>
+												<option value="50">50</option>
+												<option value="55">55</option>
+												<option value="60">60</option>
+												<option value="65">65</option>
+												<option value="70">70</option>
+												<option value="80">80</option>
+												<option value="85" selected="selected">85</option>
 											</select>
 										</div>
 									</div>
@@ -319,7 +313,7 @@
 							<div class="cont-wrap">
 								<h4 id="item-count">Найдено 34 позиции</h4>
 								<!-- begin filter-items -->
-								<div class="row filter-items">
+								<div class="row filter-items" id="filter-items">
 									<a href="#" class="col-sm-6 filter-item">
 										<div class="filter-img-wrap">
 											<img src="img/neon-img1.png">
