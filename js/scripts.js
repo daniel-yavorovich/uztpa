@@ -72,40 +72,6 @@ $(function(){
 		}
 	});
 
-	$('#parametrs').find('input[type=checkbox], input[type=radio], select').change(function(){
-		var form = $(this).parents('#parametrs'),
-		data = form.serialize();
-		$.ajax({
-			type: "POST",
-			url: ".",
-			data: data,
-			success: function(resp){
-				$("#filter-items").html(resp);
-			},
-			error: function (xhr, ajaxOptions, thrownError) { 
-	            alert(xhr.status); 
-	            alert(thrownError); 
-	        } 
-		});
-	});
-
-	if ($('#parametrs').length > 0) {
-		var form = $('#parametrs'),
-		data = form.serialize();
-		$.ajax({
-			type: "POST",
-			url: ".",
-			data: data,
-			success: function(resp){
-				$("#filter-items").html(resp);
-			},
-			error: function (xhr, ajaxOptions, thrownError) { 
-	            alert(xhr.status); 
-	            alert(thrownError); 
-	        } 
-		});
-	};
-
 	$(document).on('click', 'button[type=submit]', function(){
 		var form = $(this).parents('form'),
 		formH = form.height(),
