@@ -557,18 +557,21 @@
 			if ($('#parametrs').length > 0) {
 				var form = $('#parametrs'),
 				data = form.serialize();
-				$.ajax({
-					type: "POST",
-					url: ".",
-					data: data,
-					success: function(resp){
-						$("#filter-items").html(resp);
-					},
-					error: function (xhr, ajaxOptions, thrownError) { 
-			            alert(xhr.status); 
-			            alert(thrownError); 
-			        } 
-				});
+				if (!form.hasClass('over')) {
+					$.ajax({
+						type: "POST",
+						url: ".",
+						data: data,
+						success: function(resp){
+							$("#filter-items").html(resp);
+						},
+						error: function (xhr, ajaxOptions, thrownError) { 
+				            alert(xhr.status); 
+				            alert(thrownError); 
+				        } 
+					});
+				};
+				form.addClass('over');
 			};
 		});
 	</script>
