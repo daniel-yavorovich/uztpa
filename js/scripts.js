@@ -88,7 +88,7 @@ $(function(){
 	        } 
 		});
 	});
-	
+
 	if ($('#parametrs').length > 0) {
 		var form = $('#parametrs'),
 		data = form.serialize();
@@ -105,6 +105,66 @@ $(function(){
 	        } 
 		});
 	};
+
+	$(document).on('click', '#partner_request_form button[type=submit]', function(){
+		var form = $(this).parents('form'),
+		formH = form.height(),
+		formCont = form.html(),
+		error = true,
+		email = true;
+		// data = form.serialize();
+		form.find('input.imp').each(function(){
+			if ($(this).val() == '') {
+				$(this).css('border-color', '#ff4242');
+				if ($(this).parent().find('.incorect-span').length == 0) {
+					$(this).parent().append('<span class="incorect-span">Заполните поле</div>')
+				};
+				error = false;
+			};
+		});
+		form.find('input.email').each(function(){
+			if ($(this).val().indexOf('@') == -1){
+				$(this).css('border-color', '#ff4242');
+				if ($(this).parent().find('.incorect-span').length == 0) {
+					$(this).parent().append('<span class="incorect-span">Некоректный email</div>')
+				};
+				email = false;
+			}
+		})
+		if (error == true && email == true) {
+			form.ajaxForm({
+				type: "POST",
+				url: "/about/partners/",
+				beforeSubmit : function(){
+					form.find('button[type=submit]').attr('disabled', true)
+				},
+				success : function(){
+					if(form.hasClass('.send-resume')){
+						main_text = '<div class="succ-mess"><p>Резюме успешно отправлено!<span>Мы свяжемся с Вами в ближайшее время</span></p></div>'
+					}else{
+						main_text = '<div class="succ-mess"><p>Запрос успешно отправлен!<span>Мы свяжемся с Вами в удобное для Вас время</span></p></div>'
+					}
+					form.height(formH).html(main_text);
+					form.css('padding-top', (formH-175)/2);
+					setTimeout(function(){
+		        		form.find('.succ-mess').remove();
+		        		$.fancybox.close();
+		        		form.css('padding-top', '');
+						form.height('').html(formCont).find('.input-wrap').removeClass('corect');
+						form.find('#file-form-text').text('Прикрепить резюме');
+		        	},5000);
+				},
+				error: function (xhr, ajaxOptions, thrownError) { 
+		            alert(xhr.status); 
+		            alert(thrownError); 
+		        }
+			});
+		}
+		else{
+			return false;
+		}
+		
+	});
 
 	$(document).on('click', 'button[type=submit]', function(){
 		var form = $(this).parents('form'),
