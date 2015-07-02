@@ -235,31 +235,31 @@
 								</div>
 							</div>
 							<div class="col-xs-6 radio square-check">
-								<input type="radio" name="kran-type" id="tap-type1-1" value="Полн. краны" checked>
+								<input type="radio" name="tap_type" id="tap-type1-1" value="1" checked>
 								<label for="tap-type1-1">Полнопроходные шаровые краны</label>				        
 							</div>
 							<div class="col-xs-6 radio square-check">
-								<input type="radio" name="kran-type" id="tap-type1-2" value="Станд. краны">
+								<input type="radio" name="tap_type" id="tap-type1-2" value="2">
 								<label for="tap-type1-2">Стандартнопроходные шаровые краны</label>
 							</div>
 							<div class="col-sm-12">
 								<div class="row">
 									<div class="col-xs-6 col-md-3 checkbox figure-check">
-									  <input type="checkbox" name="kran-type-pr" id="tap-type2-1" value="Приварные" checked>
+									  <input type="checkbox" name="is_welded" id="tap-type2-1" value="true" checked>
 									  <label for="tap-type2-1">Приварные</label>
 									</div>
 									<div class="col-xs-6 col-md-3 checkbox figure-check">
-									  <input type="checkbox" name="kran-type-fl" id="tap-type2-2" value="Фланцевые" checked>
+									  <input type="checkbox" name="is_flanged" id="tap-type2-2" value="true" checked>
 									  <label for="tap-type2-2">Фланцевые</label>
 									</div>
 									<div class="col-xs-6 col-md-3 checkbox figure-check">
-									  <input type="checkbox" name="kran-type-el" id="tap-type2-3" value="Электропривод" checked>
+									  <input type="checkbox" name="is_electric_drive" id="tap-type2-3" value="true" checked>
 									  <label for="tap-type2-3">Электропривод</label>
 									</div>
 									<div class="col-xs-6 col-md-3">
 										<div class="select-wrap">
 											<p>Диаметр  от</p>
-											<select name="d-from" id="d-min" size="3">
+											<select name="diameter_from" id="diameter_from" size="3">
 												<option value="15" selected="selected">15</option>
 												<option value="20">20</option>
 												<option value="25">25</option>
@@ -274,7 +274,7 @@
 												<option value="70">70</option>
 											</select>
 											<p>до</p>
-											<select name="d-to" id="d-max" size="3">
+											<select name="diameter_to" id="diameter_to" size="3">
 												<option value="15">15</option>
 												<option value="20">20</option>
 												<option value="25">25</option>
