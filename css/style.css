@@ -2667,7 +2667,7 @@ a.fancybox:hover:after {
 /* line 2310, ../sass/style.scss */
 .main-content .publishing .new-preview-grid-3 .num {
   position: absolute;
-  top: 15px;
+  top: 22px;
   right: 20px;
   min-width: 65px;
   background: rgba(0, 0, 0, 0.58);
@@ -2679,7 +2679,7 @@ a.fancybox:hover:after {
 /* line 2321, ../sass/style.scss */
 .main-content .publishing .new-preview-grid-3 .length {
   position: absolute;
-  top: 15px;
+  top: 22px;
   right: 20px;
   min-width: 65px;
   background: rgba(0, 0, 0, 0.58);
@@ -2762,7 +2762,7 @@ a.fancybox:hover:after {
 /* line 2383, ../sass/style.scss */
 .main-content .publishing .new-preview-grid-2 .num {
   position: absolute;
-  top: 15px;
+  top: 22px;
   right: 20px;
   min-width: 65px;
   background: rgba(0, 0, 0, 0.58);
@@ -2774,7 +2774,7 @@ a.fancybox:hover:after {
 /* line 2394, ../sass/style.scss */
 .main-content .publishing .new-preview-grid-2 .length {
   position: absolute;
-  top: 15px;
+  top: 22px;
   right: 20px;
   min-width: 65px;
   background: rgba(0, 0, 0, 0.58);
