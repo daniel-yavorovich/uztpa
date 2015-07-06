@@ -544,8 +544,9 @@
 					type: "POST",
 					url: ".",
 					data: data,
-					success: function(resp){
-						$("#filter-items").html(resp);
+					success: function(data){
+						$("#filter-items").html(data['content']);
+						$('#item-count span').text(data['count']);
 					},
 					error: function (xhr, ajaxOptions, thrownError) { 
 			            alert(xhr.status); 
