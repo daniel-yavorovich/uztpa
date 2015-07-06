@@ -505,6 +505,9 @@ header{
 		color: #fff;
 		// margin-bottom: 160px;
 	}
+	.item-info-wrap{
+		min-height: 274px;
+	}
 	.item-info{
 		background: rgba(4,35,89,0.77);
 		padding: 20px;
@@ -803,6 +806,7 @@ header{
 		margin-bottom: 0;
 	}
 }
+
 .billboard-white{
 	color: #000;
 	min-height: 200px;
