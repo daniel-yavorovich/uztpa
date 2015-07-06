@@ -311,7 +311,7 @@
 						<div class="col-md-12">
 							<!-- begin cont-wrap -->
 							<div class="cont-wrap">
-								<h4 id="item-count">Найдено 34 позиции</h4>
+								<h4 id="item-count">Найдено <span>34</span> позиции</h4>
 								<!-- begin filter-items -->
 								<div class="row filter-items" id="filter-items">
 									<a href="#" class="col-sm-6 filter-item">
@@ -562,8 +562,9 @@
 						type: "POST",
 						url: ".",
 						data: data,
-						success: function(resp){
-							$("#filter-items").html(resp);
+						success: function(data){
+							$("#filter-items").html(data['content']);
+							$('#item-count span').text(data['count']);
 						},
 						error: function (xhr, ajaxOptions, thrownError) { 
 				            alert(xhr.status); 
