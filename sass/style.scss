@@ -507,10 +507,15 @@ header{
 	}
 	.item-info-wrap{
 		min-height: 274px;
+		position: relative;
 	}
 	.item-info{
 		background: rgba(4,35,89,0.77);
 		padding: 20px;
+		position: absolute;
+		right: 0;
+		left: 0;
+		bottom: 0;
 		margin-bottom: 15px;
 		.feature{
 			margin-left: 5px;
