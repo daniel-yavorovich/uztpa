@@ -3776,6 +3776,7 @@ video{
 	}
 }
 @media (max-width: 767px){
+
 	.wrapper.gradient-bg{
 		.billboard{
 			min-height: 1px;
@@ -4105,6 +4106,12 @@ video{
 	}
 	.modal-form.big-form .fancybox-close{
 		right: 25px;
+	}
+	.modal-form-wrap{
+		.fancybox-close{
+			top: 10px;
+			right: 25px;
+		}
 	}
 }
 
