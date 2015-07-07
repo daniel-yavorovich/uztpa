@@ -538,7 +538,7 @@ $(function(){
 	$('a.video').fancybox({
 		openEffect	: 'none',
 		closeEffect	: 'none',
-		maxWidth: '80%'
+		width: '80%'
 	});
 	$('a.video').click(function(){
 		if($(this).find('video').attr('id').slice(-4) == "open"){

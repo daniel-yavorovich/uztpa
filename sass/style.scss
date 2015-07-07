@@ -3429,7 +3429,7 @@ footer{
 
 }
 .fancybox-inner{
-	// overflow: visible !important;
+	// overflow: hidden !important;
 }
 .modal-form-wrap{
 	.fancybox-close{
@@ -3476,6 +3476,7 @@ footer{
 		.form-body{
 			padding-left: 20px;
 			padding-right: 20px;
+			overflow: auto;
 			.col-sm-6{
 				padding-left: 25px;
 				padding-right: 25px;
@@ -3509,7 +3510,7 @@ footer{
 video{
 	box-sizing:border-box;
 	display: block;
-	width: 100%;
+	width: 700px;
 	// max-height: 100%;	
 	max-width: 100%;
 }
@@ -4101,6 +4102,9 @@ video{
 	}
 	.shema-wrap{
 		display: none;
+	}
+	.modal-form.big-form .fancybox-close{
+		right: 25px;
 	}
 }
 
