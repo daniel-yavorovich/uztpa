@@ -534,12 +534,24 @@ $(function(){
 		$('a.video').eq(i).attr('href','#video'+count);
 		$('a.video').eq(i).find('video').attr('id','video'+count);
 		i++;
-	}
+	}	
 	$('a.video').fancybox({
 		openEffect	: 'none',
 		closeEffect	: 'none',
 		maxWidth: '80%'
 	});
+	$('a.video').click(function(){
+		if($(this).find('video').attr('id').slice(-4) == "open"){
+			$(this).find('video').attr('id').slice(-4)
+		}
+		var videoId = $(this).find('video').attr('id');
+		setTimeout(function(){
+			$('.fancybox-inner video').attr('id',videoId+"open")
+			var thisVidId = $('.fancybox-inner video').attr('id')
+			var video = document.getElementById(thisVidId);
+			video.play();
+		},300)
+	})
 
 	//слайдер в биллбоарде
 	if ($('.slider-top').length > 0) {

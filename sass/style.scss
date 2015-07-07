@@ -413,7 +413,10 @@ header{
 			left: 50%;
 			top: 50%;
 			margin-left: -17px;
-			margin-top: -12px;
+			margin-top: -12px;			
+			video{
+				display: none;
+			}
 			&:hover{
 				background-position: left -55px;
 				// @include transform(rotate(360deg));
