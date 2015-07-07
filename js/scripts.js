@@ -549,8 +549,13 @@ $(function(){
 			$('.fancybox-inner video').attr('id',videoId+"open")
 			var thisVidId = $('.fancybox-inner video').attr('id')
 			var video = document.getElementById(thisVidId);
+			video.currentTime = 0;
 			video.play();
+			var newId = $('.fancybox-inner video').attr('id').replace("open","")
+			$('.fancybox-inner video').attr('id',newId)
 		},300)
+		setTimeout(function(){
+		},301)
 	})
 
 	//слайдер в биллбоарде
