@@ -78,12 +78,7 @@ $(function(){
 		formCont = form.html(),
 		error = true,
 		email = true;
-		if ($('#partner_request_form').length > 0) {
-			var url = "/about/partners/";
-		}
-		else{
-			var url = ".";
-		}
+		var url = form.attr('action');
 		// data = form.serialize();
 		form.find('input.imp').each(function(){
 			if ($(this).val() == '') {
